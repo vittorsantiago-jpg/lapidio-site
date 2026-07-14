@@ -83,10 +83,10 @@ section{padding:88px 0}
 
 /* CASES */
 .cases-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
-.case{background:var(--card);border-radius:var(--r);border:1px solid var(--border);border-left:4px solid var(--amethyst);padding:28px 28px 28px 24px;transition:border-color .15s}
-.case:hover{border-left-color:var(--amethyst-dark)}
-.case-tag{font-size:11px;font-weight:600;color:var(--fog);letter-spacing:.5px;text-transform:uppercase;margin-bottom:10px}
-.case-name{font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:700;letter-spacing:-0.5px;color:var(--obsidian);margin-bottom:10px}
+.case{background:var(--card);border-radius:var(--r);border:1px solid var(--border);border-left:4px solid var(--amethyst);padding:28px 28px 28px 24px;transition:border-color .15s,background .15s;display:block;text-decoration:none;color:inherit;cursor:pointer}
+.case:hover{border-left-color:var(--amethyst-dark);background:var(--rose)}
+.case-link{font-size:12px;font-weight:500;color:var(--amethyst);margin-top:20px;display:inline-flex;align-items:center;gap:4px;opacity:0;transition:opacity .15s}
+.case:hover .case-link{opacity:1}
 .case-desc{font-size:13.5px;color:var(--slate);line-height:1.6;margin-bottom:24px}
 .case-stats{display:flex;gap:24px;flex-wrap:wrap}
 .cs{display:flex;flex-direction:column;gap:2px}
@@ -248,7 +248,7 @@ footer{background:var(--pebble);border-top:1px solid var(--border);padding:40px 
       <p class="sec-sub">Não são protótipos. São sistemas e lojas que clientes reais usam todos os dias.</p>
     </div>
     <div class="cases-grid">
-      <div class="case">
+      <a href="case-loreah.html" class="case">
         <div class="case-tag">Migração · Brand · Google Ads</div>
         <div class="case-name">Loreah Acessórios</div>
         <div class="case-desc">Migração completa da NuvemShop para a Tray, construção da identidade visual da marca e estruturação de campanha Google Ads focada em revendedoras B2B.</div>
@@ -258,7 +258,7 @@ footer{background:var(--pebble);border-top:1px solid var(--border);padding:40px 
           <div class="cs"><div class="cs-n">953</div><div class="cs-l">Itens no Merchant Center</div></div>
         </div>
       </div>
-      <div class="case">
+      <a href="case-rm-guerra.html" class="case">
         <div class="case-tag">ERP customizado</div>
         <div class="case-name">RM Guerra & Cia</div>
         <div class="case-desc">ERP completo para fabricante de semijoias, com gestão de produtos, fichas técnicas, controle de produção, módulo financeiro bipartido por marca e romaneio em PDF.</div>
@@ -268,7 +268,9 @@ footer{background:var(--pebble);border-top:1px solid var(--border);padding:40px 
           <div class="cs"><div class="cs-n">100%</div><div class="cs-l">Em produção ativa</div></div>
         </div>
       </div>
-      <div class="case">
+      <div class="case-link">Ver case completo →</div>
+      </a>
+      <a href="case-hs-varejos.html" class="case">
         <div class="case-tag">ERP financeiro</div>
         <div class="case-name">HS Varejos</div>
         <div class="case-desc">ERP com conciliação bancária automática para operação de mini market. Importa extratos de 4 fontes bancárias e entrega DRE e fluxo de caixa em tempo real.</div>
@@ -278,7 +280,9 @@ footer{background:var(--pebble);border-top:1px solid var(--border);padding:40px 
           <div class="cs"><div class="cs-n">100%</div><div class="cs-l">Conciliação automática</div></div>
         </div>
       </div>
-      <div class="case">
+      <div class="case-link">Ver case completo →</div>
+      </a>
+      <a href="case-atual-semjoias.html" class="case">
         <div class="case-tag">Customizações Tray</div>
         <div class="case-name">Atual Semjoias</div>
         <div class="case-desc">Funcionalidades customizadas no tema Tray: stepper de quantidade no carrinho, mensagem de pedido mínimo dinâmica e ajustes visuais sem dependência de plugins externos.</div>
@@ -287,6 +291,8 @@ footer{background:var(--pebble);border-top:1px solid var(--border);padding:40px 
           <div class="cs"><div class="cs-n">0</div><div class="cs-l">Plugins externos</div></div>
         </div>
       </div>
+      <div class="case-link">Ver case completo →</div>
+      </a>
     </div>
   </div>
 </section>

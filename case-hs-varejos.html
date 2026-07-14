@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Case HS Varejos | Lapidio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --stone:#F3EFE8;
+  --pebble:#EAE5DC;
+  --obsidian:#1C1C1A;
+  --amethyst:#A6477E;
+  --amethyst-dark:#7D2F5C;
+  --rose:#F4E0EC;
+  --slate:#5F5E5A;
+  --fog:#8F8D89;
+  --border:#D5D0C8;
+  --card:#FFFFFF;
+  --r:10px;
+}
+
+html{scroll-behavior:smooth}
+body{font-family:'Inter',-apple-system,sans-serif;background:var(--stone);color:var(--obsidian);-webkit-font-smoothing:antialiased;line-height:1.6}
+
+nav{position:sticky;top:0;z-index:50;background:rgba(243,239,232,0.9);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+.nav-wrap{max-width:1120px;margin:0 auto;padding:0 32px;height:60px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:'Space Grotesk',sans-serif;font-size:19px;font-weight:700;color:var(--obsidian);text-decoration:none;letter-spacing:-0.5px}
+.logo span{color:var(--amethyst)}
+nav ul{display:flex;align-items:center;gap:20px;list-style:none}
+nav a.nav-link{font-size:13.5px;color:var(--slate);text-decoration:none;transition:color .15s}
+nav a.nav-link:hover{color:var(--obsidian)}
+
+.btn{display:inline-flex;align-items:center;gap:6px;padding:9px 18px;border-radius:8px;font-family:'Space Grotesk',sans-serif;font-size:13.5px;font-weight:500;text-decoration:none;transition:all .15s;cursor:pointer;border:none;line-height:1}
+.btn-p{background:var(--amethyst);color:white}
+.btn-p:hover{background:var(--amethyst-dark)}
+.btn-o{background:transparent;color:var(--obsidian);border:1px solid var(--border)}
+.btn-o:hover{border-color:var(--amethyst);color:var(--amethyst)}
+
+.wrap{max-width:1120px;margin:0 auto;padding:0 32px}
+section{padding:80px 0}
+.bg-alt{background:var(--pebble)}
+.bg-dark{background:var(--obsidian);padding:80px 0}
+
+.hero{padding:72px 32px 64px;max-width:1120px;margin:0 auto}
+.hero-breadcrumb{font-size:13px;color:var(--fog);margin-bottom:24px;display:flex;align-items:center;gap:8px}
+.hero-breadcrumb a{color:var(--amethyst);text-decoration:none}
+.hero-breadcrumb a:hover{text-decoration:underline}
+.hero-label{font-size:12px;font-weight:600;letter-spacing:1.5px;color:var(--amethyst);text-transform:uppercase;margin-bottom:16px;display:flex;align-items:center;gap:10px}
+.hero-label::before{content:'';display:block;width:24px;height:2px;background:var(--amethyst);border-radius:2px;flex-shrink:0}
+.hero h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(36px,5vw,62px);font-weight:700;letter-spacing:-2px;line-height:1.05;color:var(--obsidian);margin-bottom:16px}
+.hero-tagline{font-size:18px;color:var(--slate);max-width:640px;line-height:1.65;margin-bottom:40px}
+.metrics-strip{display:grid;grid-template-columns:repeat(5,auto);gap:0;border:1px solid var(--border);border-radius:var(--r);overflow:hidden;background:var(--border);width:fit-content;margin-bottom:48px}
+.metric{background:var(--card);padding:18px 24px}
+.metric-n{font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:700;letter-spacing:-1px;color:var(--obsidian);line-height:1;margin-bottom:3px}
+.metric-l{font-size:11px;color:var(--fog);white-space:nowrap}
+.service-tags{display:flex;gap:8px;flex-wrap:wrap}
+.stag{font-size:12px;font-weight:500;background:var(--rose);color:var(--amethyst-dark);border-radius:100px;padding:5px 12px}
+
+.sec-label{font-size:11.5px;font-weight:600;letter-spacing:1.2px;color:var(--amethyst);text-transform:uppercase;margin-bottom:14px}
+.sec-title{font-family:'Space Grotesk',sans-serif;font-size:clamp(26px,3vw,38px);font-weight:700;letter-spacing:-0.8px;line-height:1.1;margin-bottom:14px;color:var(--obsidian)}
+.sec-sub{font-size:16px;color:var(--slate);max-width:500px;line-height:1.6}
+.sec-head{margin-bottom:48px}
+
+.context-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+.context-text p{font-size:15px;color:var(--slate);line-height:1.75;margin-bottom:16px}
+.context-text p:last-child{margin-bottom:0}
+.context-info{display:flex;flex-direction:column;gap:12px}
+.info-row{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:16px 20px}
+.info-row-label{font-size:11px;font-weight:600;color:var(--fog);text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px}
+.info-row-value{font-size:14px;color:var(--obsidian);font-weight:500}
+
+/* SOURCES */
+.sources-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--r);overflow:hidden}
+.source-card{background:var(--card);padding:24px 20px;transition:background .15s}
+.source-card:hover{background:var(--rose)}
+.source-bank{font-size:11px;font-weight:700;color:var(--amethyst);text-transform:uppercase;letter-spacing:.5px;margin-bottom:10px}
+.source-format{font-family:'Space Grotesk',sans-serif;font-size:22px;font-weight:700;color:var(--obsidian);letter-spacing:-0.5px;margin-bottom:6px}
+.source-desc{font-size:13px;color:var(--slate);line-height:1.55}
+
+/* TECHNICAL CALLOUT */
+.tech-callout{background:var(--obsidian);border-radius:var(--r);padding:32px;margin:32px 0}
+.tech-callout-label{font-size:11px;font-weight:600;color:var(--rose);text-transform:uppercase;letter-spacing:.5px;margin-bottom:12px}
+.tech-callout-title{font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:700;color:white;margin-bottom:12px;letter-spacing:-0.3px;line-height:1.2}
+.tech-callout-text{font-size:14px;color:rgba(255,255,255,0.65);line-height:1.7}
+
+/* MODULES */
+.modules-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--r);overflow:hidden}
+.module-card{background:var(--card);padding:22px 24px;display:flex;gap:12px;align-items:flex-start;transition:background .15s}
+.module-card:hover{background:var(--rose)}
+.module-status{width:8px;height:8px;border-radius:50%;flex-shrink:0;margin-top:5px}
+.module-content{}
+.module-name{font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:600;color:var(--obsidian);margin-bottom:4px}
+.module-desc{font-size:13px;color:var(--slate);line-height:1.5}
+
+/* VIEWS */
+.views-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.view-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:20px}
+.view-name{font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:600;color:var(--amethyst);margin-bottom:6px;font-variant-ligatures:none}
+.view-desc{font-size:13px;color:var(--slate);line-height:1.55}
+
+/* INSIGHT */
+.insight{background:var(--rose);border:1px solid rgba(166,71,126,0.2);border-radius:var(--r);padding:24px 28px;margin:24px 0}
+.insight-label{font-size:11px;font-weight:600;color:var(--amethyst-dark);text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px}
+.insight-text{font-size:15px;color:var(--obsidian);line-height:1.65;font-style:italic}
+
+/* RESULTS */
+.results-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.result-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:28px 24px}
+.result-area{font-size:11px;font-weight:600;color:var(--amethyst);text-transform:uppercase;letter-spacing:.5px;margin-bottom:16px}
+.rstat-n{font-family:'Space Grotesk',sans-serif;font-size:32px;font-weight:700;letter-spacing:-1.5px;color:var(--obsidian);line-height:1;margin-bottom:3px}
+.rstat-l{font-size:12px;color:var(--fog);margin-bottom:6px}
+.rstat-sub{font-size:13px;color:var(--slate);line-height:1.5}
+
+/* SCALE */
+.scale-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.scale-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:28px}
+.scale-num{font-family:'Space Grotesk',sans-serif;font-size:40px;font-weight:700;letter-spacing:-2px;color:var(--amethyst);line-height:1;margin-bottom:8px}
+.scale-label{font-family:'Space Grotesk',sans-serif;font-size:16px;font-weight:600;color:var(--obsidian);margin-bottom:8px}
+.scale-desc{font-size:13.5px;color:var(--slate);line-height:1.6}
+
+/* SHOWS */
+.shows-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.show-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:24px;text-decoration:none;transition:border-color .15s,background .15s;display:block}
+.show-card:hover{border-color:var(--amethyst);background:var(--rose)}
+.show-card-service{font-size:11px;font-weight:600;color:var(--amethyst);text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px}
+.show-card-title{font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:600;color:var(--obsidian);margin-bottom:6px;line-height:1.3}
+.show-card-desc{font-size:13px;color:var(--slate);line-height:1.55}
+.show-card-link{font-size:12px;font-weight:500;color:var(--amethyst);margin-top:12px;display:block}
+
+.cta-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.cta-h{font-family:'Space Grotesk',sans-serif;font-size:clamp(24px,3vw,36px);font-weight:700;letter-spacing:-0.8px;color:white;line-height:1.1;margin-bottom:12px}
+.cta-sub{font-size:15px;color:rgba(255,255,255,0.5);margin-bottom:28px;line-height:1.6}
+.cta-btns{display:flex;gap:12px;flex-wrap:wrap}
+.other-cases{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:var(--r);padding:24px}
+.other-cases-title{font-size:13px;font-weight:500;color:rgba(255,255,255,0.5);margin-bottom:16px}
+.other-case-link{display:flex;align-items:center;justify-content:space-between;padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.08);text-decoration:none;transition:opacity .15s}
+.other-case-link:last-child{border-bottom:none;padding-bottom:0}
+.other-case-link:hover{opacity:.7}
+.ocl-name{font-size:14px;font-weight:500;color:white}
+.ocl-tag{font-size:11px;color:rgba(255,255,255,0.4)}
+
+footer{background:var(--pebble);border-top:1px solid var(--border);padding:40px 0}
+.foot-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px}
+.foot-logo{font-family:'Space Grotesk',sans-serif;font-size:17px;font-weight:700;color:var(--obsidian);text-decoration:none;display:block;margin-bottom:3px}
+.foot-tag{font-size:12px;color:var(--fog)}
+.foot-links{display:flex;gap:24px;list-style:none}
+.foot-links a{font-size:13px;color:var(--fog);text-decoration:none;transition:color .15s}
+.foot-links a:hover{color:var(--obsidian)}
+
+@media(max-width:760px){
+  .nav-wrap{padding:0 20px}
+  nav ul li.hide-mobile{display:none}
+  .hero{padding:48px 20px 48px}
+  .wrap{padding:0 20px}
+  .context-grid,.sources-grid,.modules-grid,.views-grid,.results-grid,.scale-grid,.shows-grid,.cta-grid{grid-template-columns:1fr}
+  .metrics-strip{grid-template-columns:repeat(3,auto)}
+  section{padding:60px 0}
+  .foot-inner{flex-direction:column}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-wrap">
+    <a href="index.html" class="logo">Lapidio<span>.</span></a>
+    <ul>
+      <li class="hide-mobile"><a href="index.html#cases" class="nav-link">Cases</a></li>
+      <li class="hide-mobile"><a href="index.html#servicos" class="nav-link">Serviços</a></li>
+      <li><a href="index.html#contato" class="btn btn-p">Falar no WhatsApp</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-breadcrumb">
+    <a href="index.html">Lapidio</a>
+    <span>›</span>
+    <span>Cases</span>
+    <span>›</span>
+    <span>HS Varejos</span>
+  </div>
+  <div class="hero-label">Case completo · Mini market em franquia</div>
+  <h1>HS Varejos</h1>
+  <p class="hero-tagline">ERP financeiro com conciliação bancária automática para operação de mini market em franquia. Quatro fontes de dados bancários, zero consolidação manual.</p>
+  <div class="metrics-strip">
+    <div class="metric"><div class="metric-n">4</div><div class="metric-l">Fontes bancárias</div></div>
+    <div class="metric"><div class="metric-n">1.000+</div><div class="metric-l">Vendas/mês</div></div>
+    <div class="metric"><div class="metric-n">100%</div><div class="metric-l">Conciliação automática</div></div>
+    <div class="metric"><div class="metric-n">3</div><div class="metric-l">Perfis de acesso</div></div>
+    <div class="metric"><div class="metric-n">0</div><div class="metric-l">Planilhas manuais</div></div>
+  </div>
+  <div class="service-tags">
+    <span class="stag">ERP financeiro</span>
+    <span class="stag">Conciliação bancária</span>
+    <span class="stag">Next.js + TypeScript</span>
+    <span class="stag">Supabase</span>
+    <span class="stag">Parser PDF Santander</span>
+  </div>
+</div>
+
+<section class="bg-alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-label">O contexto</div>
+      <h2 class="sec-title">O sistema construído para uso próprio.</h2>
+    </div>
+    <div class="context-grid">
+      <div class="context-text">
+        <p>O HS Varejos é uma operação de mini market em modelo de franquia da rede H&V. O desenvolvedor do sistema é também o responsável pela operação, o que colocou o projeto em uma posição única: o cliente e o construtor são a mesma pessoa.</p>
+        <p>Em uma operação de mini market em franquia, os dados financeiros chegam de múltiplas fontes que não conversam entre si. O extrato do banco principal vem em PDF e XLS. A conta Stone gera arquivos OFX. Os terminais PDV exportam planilhas XLSX com mais de mil registros mensais. E o empréstimo de capital de giro via Stone Capital faz deduções automáticas diárias sobre a receita, tornando o fluxo de caixa real difícil de visualizar sem consolidação manual.</p>
+        <p>O resultado sem o sistema era esse: horas por mês de cruzamento manual de planilhas para entender se a operação estava saudável, calcular o saldo devedor do empréstimo e saber quanto poderia ser distribuído.</p>
+      </div>
+      <div class="context-info">
+        <div class="info-row">
+          <div class="info-row-label">Segmento</div>
+          <div class="info-row-value">Mini market em modelo de franquia</div>
+        </div>
+        <div class="info-row">
+          <div class="info-row-label">Rede</div>
+          <div class="info-row-value">Franquia H&V</div>
+        </div>
+        <div class="info-row">
+          <div class="info-row-label">Bancos integrados</div>
+          <div class="info-row-value">Santander PJ + Stone</div>
+        </div>
+        <div class="info-row">
+          <div class="info-row-label">Sistema</div>
+          <div class="info-row-value">erp.hsvarejos.com.br</div>
+        </div>
+        <div class="info-row">
+          <div class="info-row-label">Situação especial</div>
+          <div class="info-row-value">Desenvolvedor é também o operador do negócio</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-label">O problema</div>
+      <h2 class="sec-title">Quatro fontes. Nenhuma conversa com a outra.</h2>
+      <p class="sec-sub">Cada fonte de dado financeiro chegava em um formato diferente, exigindo consolidação manual para qualquer análise.</p>
+    </div>
+    <div class="sources-grid">
+      <div class="source-card">
+        <div class="source-bank">Santander PJ</div>
+        <div class="source-format">PDF + XLS</div>
+        <div class="source-desc">Extratos mensais disponíveis em PDF e Excel. O PDF exigia parsing manual ou ferramentas externas. Nenhuma integração automática disponível.</div>
+      </div>
+      <div class="source-card">
+        <div class="source-bank">Stone</div>
+        <div class="source-format">OFX</div>
+        <div class="source-desc">Conta Stone com limite rotativo de R$ 780, custo de 0,39%/dia, antecipação automática de recebíveis e empréstimo Stone Capital com deduções diárias de 12% da receita.</div>
+      </div>
+      <div class="source-card">
+        <div class="source-bank">Terminal PDV</div>
+        <div class="source-format">XLSX</div>
+        <div class="source-desc">Planilhas de vendas geradas pelos terminais PDV com mais de 1.000 registros mensais. Análise por método de pagamento exigia cruzamento manual.</div>
+      </div>
+      <div class="source-card">
+        <div class="source-bank">Stone Capital</div>
+        <div class="source-format">Deduções</div>
+        <div class="source-desc">Empréstimo de capital de giro com 48 parcelas de R$ 927,14 e deduções automáticas diárias. Rastrear o saldo devedor real exigia cálculo manual a cada dia.</div>
+      </div>
+    </div>
+
+    <div class="tech-callout">
+      <div class="tech-callout-label">Diferencial técnico</div>
+      <div class="tech-callout-title">Parser de extrato Santander em PDF, em TypeScript puro.</div>
+      <div class="tech-callout-text">O principal obstáculo técnico deste projeto foi a leitura automática dos extratos Santander em PDF. A maioria das soluções de mercado para esse problema usa Python com bibliotecas específicas, ou depende de OCR em imagens. O parser desenvolvido aqui usa pdf-parse em TypeScript puro, rodando server-side no Next.js sem nenhuma dependência externa. O resultado: 33 lançamentos de dezembro de 2025 extraídos e validados na primeira execução. Esse componente é um diferencial técnico real em qualquer sistema para pequeno varejo que opera com Santander.</div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-label">O que foi construído</div>
+      <h2 class="sec-title">Módulos entregues e ativos.</h2>
+    </div>
+    <div class="modules-grid">
+      <div class="module-card">
+        <div class="module-status" style="background:#3b6d11"></div>
+        <div class="module-content">
+          <div class="module-name">Importação Santander PDF</div>
+          <div class="module-desc">Parser validado com extração de 33 lançamentos de dez/2025 na primeira execução. TypeScript puro, sem dependências externas.</div>
+        </div>
+      </div>
+      <div class="module-card">
+        <div class="module-status" style="background:#3b6d11"></div>
+        <div class="module-content">
+          <div class="module-name">Importação Santander XLS</div>
+          <div class="module-desc">Leitura e normalização dos extratos em Excel do Santander PJ, com mapeamento de colunas e tratamento de valores.</div>
+        </div>
+      </div>
+      <div class="module-card">
+        <div class="module-status" style="background:#3b6d11"></div>
+        <div class="module-content">
+          <div class="module-name">Importação Stone OFX</div>
+          <div class="module-desc">Parser de arquivos OFX da conta Stone com leitura de lançamentos, taxas e deduções automáticas de empréstimo.</div>
+        </div>
+      </div>
+      <div class="module-card">
+        <div class="module-status" style="background:#3b6d11"></div>
+        <div class="module-content">
+          <div class="module-name">Importação Terminal PDV</div>
+          <div class="module-desc">Leitura de XLSX com bulk upsert em lotes de 200 vendas e 500 itens para evitar timeout no Vercel com volumes acima de 1.000 registros.</div>
+        </div>
+      </div>
+      <div class="module-card">
+        <div class="module-status" style="background:#3b6d11"></div>
+        <div class="module-content">
+          <div class="module-name">Dashboard financeiro</div>
+          <div class="module-desc">Indicadores em tempo real: saldo consolidado, receita do período, deduções Stone Capital, saldo devedor do empréstimo e distribuição por método de pagamento.</div>
+        </div>
+      </div>
+      <div class="module-card">
+        <div class="module-status" style="background:#3b6d11"></div>
+        <div class="module-content">
+          <div class="module-name">Conciliação bancária</div>
+          <div class="module-desc">Conciliação automática entre lançamentos bancários e vendas PDV. Janeiro de 2026 conciliado. Status de cada lançamento visível no painel.</div>
+        </div>
+      </div>
+      <div class="module-card">
+        <div class="module-status" style="background:#3b6d11"></div>
+        <div class="module-content">
+          <div class="module-name">DRE mensal</div>
+          <div class="module-desc">Demonstrativo de Resultado do Exercício consolidado por mês, gerado automaticamente a partir dos dados importados.</div>
+        </div>
+      </div>
+      <div class="module-card">
+        <div class="module-status" style="background:#3b6d11"></div>
+        <div class="module-content">
+          <div class="module-name">Rastreamento Stone Capital</div>
+          <div class="module-desc">Acompanhamento da parcela vigente, saldo devedor atual e histórico de deduções diárias do empréstimo de 48 parcelas de R$ 927,14.</div>
+        </div>
+      </div>
+      <div class="module-card">
+        <div class="module-status" style="background:#3b6d11"></div>
+        <div class="module-content">
+          <div class="module-name">Gestão de usuários</div>
+          <div class="module-desc">Três perfis de acesso: Admin, Contábil e Operador. Cada perfil com permissões específicas sobre o que pode visualizar e editar.</div>
+        </div>
+      </div>
+      <div class="module-card">
+        <div class="module-status" style="background:#185fa5"></div>
+        <div class="module-content">
+          <div class="module-name">Importação retroativa</div>
+          <div class="module-desc">Em andamento: importação dos dados de 2023, 2024 e 2025 para histórico completo. Estratégia ano a ano para evitar sobreposição.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-label">Arquitetura de dados</div>
+      <h2 class="sec-title">Cinco views que entregam os relatórios.</h2>
+      <p class="sec-sub">Em vez de relatórios gerados na aplicação, os dados são consolidados diretamente no banco via views SQL, eliminando processamento desnecessário no servidor.</p>
+    </div>
+    <div class="views-grid">
+      <div class="view-card">
+        <div class="view-name">vw_conciliacao_status</div>
+        <div class="view-desc">Status de conciliação por lançamento bancário: conciliado, pendente ou divergente.</div>
+      </div>
+      <div class="view-card">
+        <div class="view-name">vw_dre_mensal</div>
+        <div class="view-desc">DRE consolidado por mês com receitas, despesas e resultado operacional calculados automaticamente.</div>
+      </div>
+      <div class="view-card">
+        <div class="view-name">vw_fluxo_caixa</div>
+        <div class="view-desc">Fluxo de caixa operacional com entradas e saídas por período, considerando as deduções automáticas Stone.</div>
+      </div>
+      <div class="view-card">
+        <div class="view-name">vw_pagamentos_pessoais</div>
+        <div class="view-desc">Distribuição de lucros e retiradas pessoais separadas do fluxo operacional da empresa.</div>
+      </div>
+      <div class="view-card">
+        <div class="view-name">vw_vendas_por_metodo</div>
+        <div class="view-desc">Breakdown de vendas por forma de pagamento com taxa por método: débito 1,10%, crédito 2,10%, PIX 0,50%.</div>
+      </div>
+      <div class="view-card" style="background:var(--pebble)">
+        <div class="view-name" style="color:var(--fog)">Stack técnico</div>
+        <div class="view-desc">Next.js 16 App Router, Supabase PostgreSQL com RLS, Vercel com maxDuration 60s nas rotas de upload, DM Sans e DM Mono.</div>
+      </div>
+    </div>
+
+    <div class="insight">
+      <div class="insight-label">O que este projeto prova</div>
+      <div class="insight-text">Quando o desenvolvedor é também o usuário do sistema, o produto final reflete problemas reais resolvidos de forma real. Nenhum requisito foi inventado em reunião. Cada funcionalidade nasceu de uma hora perdida tentando fechar o caixa em planilha.</div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-label">Resultados</div>
+      <h2 class="sec-title">O que o sistema entrega hoje.</h2>
+    </div>
+    <div class="results-grid">
+      <div class="result-card">
+        <div class="result-area">Automação</div>
+        <div class="rstat-n">100%</div>
+        <div class="rstat-l">Conciliação automática</div>
+        <div class="rstat-sub" style="margin-top:8px">Janeiro de 2026 conciliado sem nenhuma entrada manual. O sistema faz o cruzamento entre extrato bancário e vendas PDV automaticamente.</div>
+      </div>
+      <div class="result-card">
+        <div class="result-area">Volume processado</div>
+        <div class="rstat-n">1.000+</div>
+        <div class="rstat-l">Registros de venda por mês</div>
+        <div class="rstat-sub" style="margin-top:8px">Importação via XLSX com bulk upsert otimizado em lotes. Sem timeout, sem perda de dados, sem necessidade de dividir arquivos manualmente.</div>
+      </div>
+      <div class="result-card">
+        <div class="result-area">Fontes integradas</div>
+        <div class="rstat-n">4</div>
+        <div class="rstat-l">Origens de dados diferentes</div>
+        <div class="rstat-sub" style="margin-top:8px">Santander PDF, Santander XLS, Stone OFX e PDV XLSX lidos e consolidados em um único painel, sem cruzamento manual.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-label">Potencial de replicação</div>
+      <h2 class="sec-title">Um produto para um mercado de 50.000 lojas.</h2>
+      <p class="sec-sub">O sistema nasceu para resolver um problema específico. Mas o problema é de praticamente todo mini mercado que opera com Stone e Santander no Brasil.</p>
+    </div>
+    <div class="scale-grid">
+      <div class="scale-card">
+        <div class="scale-num">50k+</div>
+        <div class="scale-label">Mini mercados independentes no Brasil</div>
+        <div class="scale-desc">Praticamente todos enfrentam o mesmo problema: dados financeiros fragmentados em fontes incompatíveis que exigem consolidação manual todo mês. O parser Santander PDF é um diferencial técnico que nenhum ERP de pequeno varejo entrega hoje.</div>
+      </div>
+      <div class="scale-card">
+        <div class="scale-num">SaaS</div>
+        <div class="scale-label">Arquitetura multi-tenant pronta</div>
+        <div class="scale-desc">O sistema foi construído sobre Supabase com Row Level Security, o que permite isolamento completo de dados por empresa sem alteração na infraestrutura. Cada nova unidade pode ser integrada com custo marginal baixo.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-label">O que este case demonstra</div>
+      <h2 class="sec-title">Serviços disponíveis para o seu negócio.</h2>
+    </div>
+    <div class="shows-grid">
+      <a href="erp-customizado.html" class="show-card">
+        <div class="show-card-service">Sistema</div>
+        <div class="show-card-title">ERP customizado</div>
+        <div class="show-card-desc">Sistemas de gestão construídos do zero para resolver problemas reais de operações que cresceram além das planilhas.</div>
+        <div class="show-card-link">Ver serviço →</div>
+      </a>
+      <a href="case-rm-guerra.html" class="show-card">
+        <div class="show-card-service">Case relacionado</div>
+        <div class="show-card-title">RM Guerra & Cia</div>
+        <div class="show-card-desc">ERP de manufatura para fabricante de semijoias com módulos de produção, precificação e financeiro bipartido por marca.</div>
+        <div class="show-card-link">Ver case →</div>
+      </a>
+      <a href="index.html#contato" class="show-card">
+        <div class="show-card-service">Próximo passo</div>
+        <div class="show-card-title">Diagnóstico gratuito</div>
+        <div class="show-card-desc">Se você opera com fontes de dados fragmentadas e consolidação manual, a conversa começa com um diagnóstico de 30 minutos.</div>
+        <div class="show-card-link">Solicitar diagnóstico →</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<div class="bg-dark">
+  <div class="wrap">
+    <div class="cta-grid">
+      <div>
+        <h2 class="cta-h">Sua operação tem dados espalhados em fontes diferentes?</h2>
+        <p class="cta-sub">Conta de onde vêm os dados financeiros do seu negócio e quanto tempo você perde consolidando tudo. A gente avalia o que é possível automatizar.</p>
+        <div class="cta-btns">
+          <a href="https://wa.me/5519982655486?text=Olá!%20Vi%20o%20case%20do%20HS%20Varejos%20e%20tenho%20interesse%20em%20um%20sistema%20de%20conciliação%20financeira." class="btn" style="background:#25D366;color:white" target="_blank">Falar no WhatsApp</a>
+          <a href="erp-customizado.html" class="btn btn-o" style="border-color:rgba(255,255,255,0.2);color:rgba(255,255,255,0.7)">Ver o serviço de ERP</a>
+        </div>
+      </div>
+      <div class="other-cases">
+        <div class="other-cases-title">Outros cases</div>
+        <a href="case-loreah.html" class="other-case-link">
+          <div>
+            <div class="ocl-name">Loreah Acessórios</div>
+            <div class="ocl-tag">Migração · Brand system · Google Ads</div>
+          </div>
+          <span style="color:rgba(255,255,255,0.3);font-size:16px">→</span>
+        </a>
+        <a href="case-rm-guerra.html" class="other-case-link">
+          <div>
+            <div class="ocl-name">RM Guerra & Cia</div>
+            <div class="ocl-tag">ERP customizado · Fabricante de semijoias</div>
+          </div>
+          <span style="color:rgba(255,255,255,0.3);font-size:16px">→</span>
+        </a>
+        <a href="case-atual-semjoias.html" class="other-case-link">
+          <div>
+            <div class="ocl-name">Atual Semjoias</div>
+            <div class="ocl-tag">Customizações Tray · E-commerce B2B</div>
+          </div>
+          <span style="color:rgba(255,255,255,0.3);font-size:16px">→</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-inner">
+      <div>
+        <a href="index.html" class="foot-logo">Lapidio<span style="color:var(--amethyst)">.</span></a>
+        <div class="foot-tag">Sua operação mais precisa. · Piracicaba, SP</div>
+      </div>
+      <ul class="foot-links">
+        <li><a href="index.html#servicos">Serviços</a></li>
+        <li><a href="index.html#cases">Cases</a></li>
+        <li><a href="index.html#faq">FAQ</a></li>
+        <li><a href="index.html#contato">Contato</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

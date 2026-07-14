@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Case Loreah Acessórios | Lapidio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --stone:#F3EFE8;
+  --pebble:#EAE5DC;
+  --obsidian:#1C1C1A;
+  --amethyst:#A6477E;
+  --amethyst-dark:#7D2F5C;
+  --rose:#F4E0EC;
+  --slate:#5F5E5A;
+  --fog:#8F8D89;
+  --border:#D5D0C8;
+  --card:#FFFFFF;
+  --r:10px;
+  --loreah-1:#617057;
+  --loreah-2:#7C8869;
+  --loreah-3:#BAC3B5;
+  --loreah-4:#D5C7AC;
+  --loreah-5:#F9F4EA;
+  --loreah-6:#3D4835;
+}
+
+html{scroll-behavior:smooth}
+body{font-family:'Inter',-apple-system,sans-serif;background:var(--stone);color:var(--obsidian);-webkit-font-smoothing:antialiased;line-height:1.6}
+
+nav{position:sticky;top:0;z-index:50;background:rgba(243,239,232,0.9);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+.nav-wrap{max-width:1120px;margin:0 auto;padding:0 32px;height:60px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:'Space Grotesk',sans-serif;font-size:19px;font-weight:700;color:var(--obsidian);text-decoration:none;letter-spacing:-0.5px}
+.logo span{color:var(--amethyst)}
+nav ul{display:flex;align-items:center;gap:20px;list-style:none}
+nav a.nav-link{font-size:13.5px;color:var(--slate);text-decoration:none;transition:color .15s}
+nav a.nav-link:hover{color:var(--obsidian)}
+
+.btn{display:inline-flex;align-items:center;gap:6px;padding:9px 18px;border-radius:8px;font-family:'Space Grotesk',sans-serif;font-size:13.5px;font-weight:500;text-decoration:none;transition:all .15s;cursor:pointer;border:none;line-height:1}
+.btn-p{background:var(--amethyst);color:white}
+.btn-p:hover{background:var(--amethyst-dark)}
+.btn-o{background:transparent;color:var(--obsidian);border:1px solid var(--border)}
+.btn-o:hover{border-color:var(--amethyst);color:var(--amethyst)}
+
+.wrap{max-width:1120px;margin:0 auto;padding:0 32px}
+section{padding:80px 0}
+.bg-alt{background:var(--pebble)}
+.bg-dark{background:var(--obsidian);padding:80px 0}
+
+/* HERO */
+.hero{padding:72px 32px 64px;max-width:1120px;margin:0 auto}
+.hero-breadcrumb{font-size:13px;color:var(--fog);margin-bottom:24px;display:flex;align-items:center;gap:8px}
+.hero-breadcrumb a{color:var(--amethyst);text-decoration:none}
+.hero-breadcrumb a:hover{text-decoration:underline}
+.hero-label{font-size:12px;font-weight:600;letter-spacing:1.5px;color:var(--amethyst);text-transform:uppercase;margin-bottom:16px;display:flex;align-items:center;gap:10px}
+.hero-label::before{content:'';display:block;width:24px;height:2px;background:var(--amethyst);border-radius:2px;flex-shrink:0}
+.hero h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(36px,5vw,62px);font-weight:700;letter-spacing:-2px;line-height:1.05;color:var(--obsidian);margin-bottom:16px}
+.hero-tagline{font-size:18px;color:var(--slate);max-width:640px;line-height:1.65;margin-bottom:40px}
+.metrics-strip{display:grid;grid-template-columns:repeat(5,auto);gap:0;border:1px solid var(--border);border-radius:var(--r);overflow:hidden;background:var(--border);width:fit-content;margin-bottom:48px}
+.metric{background:var(--card);padding:18px 24px}
+.metric-n{font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:700;letter-spacing:-1px;color:var(--obsidian);line-height:1;margin-bottom:3px}
+.metric-l{font-size:11px;color:var(--fog);white-space:nowrap}
+.service-tags{display:flex;gap:8px;flex-wrap:wrap}
+.stag{font-size:12px;font-weight:500;background:var(--rose);color:var(--amethyst-dark);border-radius:100px;padding:5px 12px}
+
+/* SECTION HEADERS */
+.sec-label{font-size:11.5px;font-weight:600;letter-spacing:1.2px;color:var(--amethyst);text-transform:uppercase;margin-bottom:14px}
+.sec-title{font-family:'Space Grotesk',sans-serif;font-size:clamp(26px,3vw,38px);font-weight:700;letter-spacing:-0.8px;line-height:1.1;margin-bottom:14px;color:var(--obsidian)}
+.sec-sub{font-size:16px;color:var(--slate);max-width:500px;line-height:1.6}
+.sec-head{margin-bottom:48px}
+
+/* CONTEXT */
+.context-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+.context-text p{font-size:15px;color:var(--slate);line-height:1.75;margin-bottom:16px}
+.context-text p:last-child{margin-bottom:0}
+.context-info{display:flex;flex-direction:column;gap:12px}
+.info-row{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:16px 20px}
+.info-row-label{font-size:11px;font-weight:600;color:var(--fog);text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px}
+.info-row-value{font-size:14px;color:var(--obsidian);font-weight:500}
+
+/* BEFORE STATE */
+.before-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.before-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:20px}
+.before-icon{font-size:11px;font-weight:700;color:var(--fog);text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px}
+.before-text{font-size:13.5px;color:var(--slate);line-height:1.55}
+
+/* PHASES TIMELINE */
+.phases{display:flex;flex-direction:column;gap:0}
+.phase-block{display:grid;grid-template-columns:80px 1fr;gap:0;border:1px solid var(--border);border-radius:var(--r);overflow:hidden;background:var(--card);margin-bottom:16px}
+.phase-num-col{background:var(--amethyst);display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding:28px 16px;gap:8px}
+.phase-num{font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:700;color:white;line-height:1}
+.phase-num-label{font-size:10px;font-weight:600;color:rgba(255,255,255,0.6);letter-spacing:.5px;text-transform:uppercase;text-align:center;line-height:1.3}
+.phase-content{padding:28px 32px}
+.phase-title{font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:700;color:var(--obsidian);margin-bottom:6px;letter-spacing:-0.3px}
+.phase-sub{font-size:13px;color:var(--fog);margin-bottom:20px;font-weight:500}
+.phase-body{font-size:14px;color:var(--slate);line-height:1.7;margin-bottom:20px}
+.phase-items{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.phase-item{font-size:13px;color:var(--slate);display:flex;gap:8px;align-items:flex-start;line-height:1.5}
+
+/* PALETTE VISUAL */
+.palette-bar{display:flex;height:56px;border-radius:8px;overflow:hidden;border:1px solid rgba(0,0,0,0.06);margin:16px 0}
+.palette-swatch{flex:1;position:relative;cursor:default}
+.palette-swatch:hover::after{content:attr(data-hex);position:absolute;bottom:6px;left:50%;transform:translateX(-50%);font-size:10px;font-family:'Space Grotesk',sans-serif;font-weight:600;color:white;background:rgba(0,0,0,0.5);padding:2px 6px;border-radius:4px;white-space:nowrap}
+.palette-labels{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin-top:8px}
+.palette-label{text-align:center;font-size:11px;color:var(--fog)}
+
+/* RESULTS */
+.results-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.result-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:28px 24px}
+.result-area{font-size:11px;font-weight:600;color:var(--amethyst);text-transform:uppercase;letter-spacing:.5px;margin-bottom:16px}
+.result-stats{display:flex;flex-direction:column;gap:14px}
+.rstat-n{font-family:'Space Grotesk',sans-serif;font-size:32px;font-weight:700;letter-spacing:-1.5px;color:var(--obsidian);line-height:1;margin-bottom:3px}
+.rstat-l{font-size:12px;color:var(--fog)}
+.rstat-sub{font-size:13px;color:var(--slate);margin-top:4px;line-height:1.5}
+
+/* INSIGHT BOX */
+.insight{background:var(--rose);border:1px solid rgba(166,71,126,0.2);border-radius:var(--r);padding:24px 28px;margin:24px 0}
+.insight-label{font-size:11px;font-weight:600;color:var(--amethyst-dark);text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px}
+.insight-text{font-size:15px;color:var(--obsidian);line-height:1.65;font-style:italic}
+
+/* WHAT THIS SHOWS */
+.shows-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.show-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:24px;text-decoration:none;transition:border-color .15s,background .15s;display:block}
+.show-card:hover{border-color:var(--amethyst);background:var(--rose)}
+.show-card-service{font-size:11px;font-weight:600;color:var(--amethyst);text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px}
+.show-card-title{font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:600;color:var(--obsidian);margin-bottom:6px;line-height:1.3}
+.show-card-desc{font-size:13px;color:var(--slate);line-height:1.55}
+.show-card-link{font-size:12px;font-weight:500;color:var(--amethyst);margin-top:12px;display:block}
+
+/* CTA */
+.cta-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.cta-h{font-family:'Space Grotesk',sans-serif;font-size:clamp(24px,3vw,36px);font-weight:700;letter-spacing:-0.8px;color:white;line-height:1.1;margin-bottom:12px}
+.cta-sub{font-size:15px;color:rgba(255,255,255,0.5);margin-bottom:28px;line-height:1.6}
+.cta-btns{display:flex;gap:12px;flex-wrap:wrap}
+.other-cases{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:var(--r);padding:24px}
+.other-cases-title{font-size:13px;font-weight:500;color:rgba(255,255,255,0.5);margin-bottom:16px}
+.other-case-link{display:flex;align-items:center;justify-content:space-between;padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.08);text-decoration:none;transition:opacity .15s}
+.other-case-link:last-child{border-bottom:none;padding-bottom:0}
+.other-case-link:hover{opacity:.7}
+.ocl-name{font-size:14px;font-weight:500;color:white}
+.ocl-tag{font-size:11px;color:rgba(255,255,255,0.4)}
+
+footer{background:var(--pebble);border-top:1px solid var(--border);padding:40px 0}
+.foot-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px}
+.foot-logo{font-family:'Space Grotesk',sans-serif;font-size:17px;font-weight:700;color:var(--obsidian);text-decoration:none;display:block;margin-bottom:3px}
+.foot-tag{font-size:12px;color:var(--fog)}
+.foot-links{display:flex;gap:24px;list-style:none}
+.foot-links a{font-size:13px;color:var(--fog);text-decoration:none;transition:color .15s}
+.foot-links a:hover{color:var(--obsidian)}
+
+@media(max-width:760px){
+  .nav-wrap{padding:0 20px}
+  nav ul li.hide-mobile{display:none}
+  .hero{padding:48px 20px 48px}
+  .wrap{padding:0 20px}
+  .context-grid,.before-grid,.results-grid,.shows-grid,.cta-grid{grid-template-columns:1fr}
+  .metrics-strip{grid-template-columns:repeat(3,auto)}
+  .phase-block{grid-template-columns:60px 1fr}
+  .phase-items{grid-template-columns:1fr}
+  .palette-labels{grid-template-columns:repeat(3,1fr)}
+  section{padding:60px 0}
+  .foot-inner{flex-direction:column}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-wrap">
+    <a href="index.html" class="logo">Lapidio<span>.</span></a>
+    <ul>
+      <li class="hide-mobile"><a href="index.html#cases" class="nav-link">Cases</a></li>
+      <li class="hide-mobile"><a href="index.html#servicos" class="nav-link">Serviços</a></li>
+      <li><a href="index.html#contato" class="btn btn-p">Falar no WhatsApp</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-breadcrumb">
+    <a href="index.html">Lapidio</a>
+    <span>›</span>
+    <span>Cases</span>
+    <span>›</span>
+    <span>Loreah Acessórios</span>
+  </div>
+  <div class="hero-label">Case completo · Semijoias em aço inox</div>
+  <h1>Loreah Acessórios</h1>
+  <p class="hero-tagline">Da NuvemShop para a Tray, com identidade visual construída do zero e toda a infraestrutura de marketing digital estruturada antes do primeiro anúncio.</p>
+  <div class="metrics-strip">
+    <div class="metric"><div class="metric-n">829</div><div class="metric-l">Produtos migrados</div></div>
+    <div class="metric"><div class="metric-n">35</div><div class="metric-l">Categorias</div></div>
+    <div class="metric"><div class="metric-n">953</div><div class="metric-l">No Merchant Center</div></div>
+    <div class="metric"><div class="metric-n">4</div><div class="metric-l">Etapas de funil</div></div>
+    <div class="metric"><div class="metric-n">3</div><div class="metric-l">Serviços simultâneos</div></div>
+  </div>
+  <div class="service-tags">
+    <span class="stag">Migração e-commerce</span>
+    <span class="stag">Brand system</span>
+    <span class="stag">Google Ads</span>
+    <span class="stag">Merchant Center</span>
+    <span class="stag">GTM + GA4</span>
+  </div>
+</div>
+
+<section class="bg-alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-label">O contexto</div>
+      <h2 class="sec-title">Quem é a Loreah.</h2>
+    </div>
+    <div class="context-grid">
+      <div class="context-text">
+        <p>A Loreah Acessórios é a marca de venda da RM Guerra & Cia, fabricante de semijoias em aço inox 304 e 316L localizada em Piracicaba, SP. O foco comercial é em revendedoras e atacadistas, com pedido mínimo de R$ 150 e catálogo de centenas de produtos em diferentes categorias.</p>
+        <p>Quando o projeto começou, a loja estava na NuvemShop e operando sem rastreamento de conversão, sem identidade visual documentada e sem presença no Google Shopping. A decisão de migrar para a Tray foi tomada por limitações da plataforma anterior para o modelo B2B.</p>
+        <p>O desafio real não era só a migração técnica. Era fazer a transição de plataforma sem perder o catálogo, construir uma identidade visual que refletisse a marca, e estruturar toda a infraestrutura de marketing digital antes de ativar o primeiro anúncio pago.</p>
+      </div>
+      <div class="context-info">
+        <div class="info-row">
+          <div class="info-row-label">Segmento</div>
+          <div class="info-row-value">Semijoias em aço inox 304 e 316L</div>
+        </div>
+        <div class="info-row">
+          <div class="info-row-label">Modelo de negócio</div>
+          <div class="info-row-value">B2B para revendedoras e atacadistas</div>
+        </div>
+        <div class="info-row">
+          <div class="info-row-label">Plataforma anterior</div>
+          <div class="info-row-value">NuvemShop</div>
+        </div>
+        <div class="info-row">
+          <div class="info-row-label">Plataforma atual</div>
+          <div class="info-row-value">Tray Commerce · loreahacoinox.com.br</div>
+        </div>
+        <div class="info-row">
+          <div class="info-row-label">Pedido mínimo</div>
+          <div class="info-row-value">R$ 150</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-label">Ponto de partida</div>
+      <h2 class="sec-title">O que existia antes.</h2>
+      <p class="sec-sub">Para entender o que foi construído, é preciso entender o que não existia.</p>
+    </div>
+    <div class="before-grid">
+      <div class="before-card">
+        <div class="before-icon">× Rastreamento</div>
+        <div class="before-text">Nenhuma tag de conversão instalada. Sem GA4, sem GTM, sem pixel. Não havia como saber de onde vinham os pedidos nem quais produtos geravam mais interesse.</div>
+      </div>
+      <div class="before-card">
+        <div class="before-icon">× Identidade visual</div>
+        <div class="before-text">Sem paleta de cores documentada, sem tipografia definida, sem guia de como a marca deveria se apresentar. Cada comunicação era tomada de decisão na hora.</div>
+      </div>
+      <div class="before-card">
+        <div class="before-icon">× Google Shopping</div>
+        <div class="before-text">Merchant Center sem feed aprovado. Produtos com atributos incompletos ou incorretos. A marca estava invisível para quem pesquisava semijoias no Google.</div>
+      </div>
+      <div class="before-card">
+        <div class="before-icon">× Catálogo organizado</div>
+        <div class="before-text">829 produtos na NuvemShop sem hierarquia de categorias estruturada para a Tray. A migração manual seria semanas de trabalho e alto risco de perda de dados.</div>
+      </div>
+      <div class="before-card">
+        <div class="before-icon">× Campanhas pagas</div>
+        <div class="before-text">Sem estrutura de rastreamento nem feed aprovado no Merchant Center, qualquer campanha Google Ads seria lançada às cegas, sem dados para otimizar.</div>
+      </div>
+      <div class="before-card">
+        <div class="before-icon">× Performance no mobile</div>
+        <div class="before-text">Banners em PNG com peso excessivo. Mobile PageSpeed em 71, com Speed Index de 9,3 segundos, impactando diretamente a taxa de rejeição em dispositivos móveis.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-label">A execução</div>
+      <h2 class="sec-title">Três frentes. Uma sequência lógica.</h2>
+      <p class="sec-sub">Migração primeiro. Identidade em paralelo. Marketing digital depois, com a base certa.</p>
+    </div>
+
+    <div class="phases">
+      <div class="phase-block">
+        <div class="phase-num-col">
+          <div class="phase-num">01</div>
+          <div class="phase-num-label">Migração</div>
+        </div>
+        <div class="phase-content">
+          <div class="phase-title">Migração NuvemShop para Tray</div>
+          <div class="phase-sub">829 produtos · 35 categorias · 3 níveis hierárquicos · DNS + SSL</div>
+          <div class="phase-body">A migração foi feita via pipeline automatizado em Python, desenvolvido especificamente para o formato de exportação da NuvemShop e importação da Tray. Cada produto teve suas imagens extraídas via API, enviadas ao Cloudinary com transformações de otimização (redimensionamento para 2000x2000px, conversão para JPEG, compressão automática) e os dados foram exportados em arquivos XLS organizados por categoria, no formato exato que a Tray aceita para importação em lote.</div>
+          <div class="phase-items">
+            <div class="phase-item"><span style="color:var(--amethyst);flex-shrink:0">✓</span><span>Extração completa via NuvemShop API sem perda de dados</span></div>
+            <div class="phase-item"><span style="color:var(--amethyst);flex-shrink:0">✓</span><span>829 imagens otimizadas e hospedadas no Cloudinary</span></div>
+            <div class="phase-item"><span style="color:var(--amethyst);flex-shrink:0">✓</span><span>35 categorias mapeadas em 3 níveis de hierarquia</span></div>
+            <div class="phase-item"><span style="color:var(--amethyst);flex-shrink:0">✓</span><span>Importação via XLS por categoria na Tray</span></div>
+            <div class="phase-item"><span style="color:var(--amethyst);flex-shrink:0">✓</span><span>QA por amostragem em 50 produtos aleatórios</span></div>
+            <div class="phase-item"><span style="color:var(--amethyst);flex-shrink:0">✓</span><span>DNS migrado e SSL ativo em loreahacoinox.com.br</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="phase-block">
+        <div class="phase-num-col">
+          <div class="phase-num">02</div>
+          <div class="phase-num-label">Identidade</div>
+        </div>
+        <div class="phase-content">
+          <div class="phase-title">Brand system e aplicação na loja</div>
+          <div class="phase-sub">Paleta · Tipografia · EasyCheckout · Banners · Performance</div>
+          <div class="phase-body">Com a loja no ar na Tray, o trabalho de identidade visual foi construído em paralelo e aplicado diretamente no tema. A paleta foi desenvolvida em seis tons de verde-musgo, bege e off-white, refletindo o aço inox e a elegância da marca. As fontes Carilo Italic e Clover foram escolhidas para os títulos, com Poppins para corpo de texto, todas hospedadas no Cloudinary via @font-face para carregamento otimizado.</div>
+          <div style="margin:16px 0">
+            <div class="palette-bar">
+              <div class="palette-swatch" style="background:var(--loreah-1)" data-hex="#617057"></div>
+              <div class="palette-swatch" style="background:var(--loreah-2)" data-hex="#7C8869"></div>
+              <div class="palette-swatch" style="background:var(--loreah-3)" data-hex="#BAC3B5"></div>
+              <div class="palette-swatch" style="background:var(--loreah-4)" data-hex="#D5C7AC"></div>
+              <div class="palette-swatch" style="background:var(--loreah-5)" data-hex="#F9F4EA"></div>
+              <div class="palette-swatch" style="background:var(--loreah-6)" data-hex="#3D4835"></div>
+            </div>
+            <div class="palette-labels">
+              <div class="palette-label">#617057</div>
+              <div class="palette-label">#7C8869</div>
+              <div class="palette-label">#BAC3B5</div>
+              <div class="palette-label">#D5C7AC</div>
+              <div class="palette-label">#F9F4EA</div>
+              <div class="palette-label">#3D4835</div>
+            </div>
+          </div>
+          <div class="phase-items">
+            <div class="phase-item"><span style="color:var(--amethyst);flex-shrink:0">✓</span><span>Header compacto e logo dimensionado corretamente</span></div>
+            <div class="phase-item"><span style="color:var(--amethyst);flex-shrink:0">✓</span><span>Botões em formato pill com a paleta da marca</span></div>
+            <div class="phase-item"><span style="color:var(--amethyst);flex-shrink:0">✓</span><span>EasyCheckout reestilizado com Poppins e cores Loreah</span></div>
+            <div class="phase-item"><span style="color:var(--amethyst);flex-shrink:0">✓</span><span>Fontes Carilo + Clover via @font-face no Cloudinary</span></div>
+            <div class="phase-item"><span style="color:var(--amethyst);flex-shrink:0">✓</span><span>Banners convertidos PNG para JPEG com 85% de redução</span></div>
+            <div class="phase-item"><span style="color:var(--amethyst);flex-shrink:0">✓</span><span>Mobile PageSpeed de 71 para 76, Speed Index de 9,3s para 6,4s</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="phase-block">
+        <div class="phase-num-col">
+          <div class="phase-num">03</div>
+          <div class="phase-num-label">Marketing</div>
+        </div>
+        <div class="phase-content">
+          <div class="phase-title">Infraestrutura digital completa</div>
+          <div class="phase-sub">GTM · GA4 · Merchant Center · Google Ads Performance Max</div>
+          <div class="phase-body">Somente depois da loja no ar e da identidade aplicada, a infraestrutura de marketing foi construída. O GTM foi configurado como única fonte de tags, com o GA4 vinculado e o funil de checkout mapeado em quatro etapas (carrinho, identifique-se, principal e finalização). No Merchant Center, os 953 produtos foram corrigidos com atributos obrigatórios e aprovados no feed. A campanha Performance Max foi estruturada com foco exclusivo em revendedoras e atacadistas, com Orixás excluídos do grupo de produtos.</div>
+          <div class="phase-items">
+            <div class="phase-item"><span style="color:var(--amethyst);flex-shrink:0">✓</span><span>GTM como fonte única de tags, GA4 vinculado</span></div>
+            <div class="phase-item"><span style="color:var(--amethyst);flex-shrink:0">✓</span><span>Funil de checkout mapeado em 4 etapas</span></div>
+            <div class="phase-item"><span style="color:var(--amethyst);flex-shrink:0">✓</span><span>Tag de monitoramento do tempo de carregamento do QR Code PIX</span></div>
+            <div class="phase-item"><span style="color:var(--amethyst);flex-shrink:0">✓</span><span>953 produtos corrigidos no Merchant Center</span></div>
+            <div class="phase-item"><span style="color:var(--amethyst);flex-shrink:0">✓</span><span>SEO preenchido em todos os produtos e 6 categorias</span></div>
+            <div class="phase-item"><span style="color:var(--amethyst);flex-shrink:0">✓</span><span>PMax com 35 temas, 20 imagens, 15 títulos, 5 descrições</span></div>
+            <div class="phase-item"><span style="color:var(--amethyst);flex-shrink:0">✓</span><span>Público-alvo segmentado por perfil de revendedora</span></div>
+            <div class="phase-item"><span style="color:var(--amethyst);flex-shrink:0">✓</span><span>Sitelinks, destaques e diretrizes de marca configurados</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="insight">
+      <div class="insight-label">Decisão técnica relevante</div>
+      <div class="insight-text">A sequência importou tanto quanto a execução. Lançar anúncios antes de ter rastreamento correto ou feed aprovado no Merchant Center é a causa mais comum de campanhas que não conseguem otimizar. A estrutura foi construída na ordem certa: plataforma primeiro, identidade em paralelo, marketing por último.</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-label">Resultados</div>
+      <h2 class="sec-title">O que ficou entregue.</h2>
+    </div>
+    <div class="results-grid">
+      <div class="result-card">
+        <div class="result-area">Migração</div>
+        <div class="result-stats">
+          <div>
+            <div class="rstat-n">829</div>
+            <div class="rstat-l">Produtos migrados</div>
+            <div class="rstat-sub">Com imagens otimizadas no Cloudinary e categorias em hierarquia de 3 níveis. Zero perda de dados.</div>
+          </div>
+          <div>
+            <div class="rstat-n">35</div>
+            <div class="rstat-l">Categorias estruturadas</div>
+            <div class="rstat-sub">Em 3 níveis hierárquicos, organizando coleções, materiais e tipos de peça.</div>
+          </div>
+        </div>
+      </div>
+      <div class="result-card">
+        <div class="result-area">Identidade e performance</div>
+        <div class="result-stats">
+          <div>
+            <div class="rstat-n">85%</div>
+            <div class="rstat-l">Redução no peso dos banners</div>
+            <div class="rstat-sub">Conversão de PNG para JPEG com compressão automática via Cloudinary.</div>
+          </div>
+          <div>
+            <div class="rstat-n">71 → 76</div>
+            <div class="rstat-l">Mobile PageSpeed</div>
+            <div class="rstat-sub">Speed Index de 9,3 segundos para 6,4 segundos após otimização de imagens.</div>
+          </div>
+        </div>
+      </div>
+      <div class="result-card">
+        <div class="result-area">Marketing digital</div>
+        <div class="result-stats">
+          <div>
+            <div class="rstat-n">953</div>
+            <div class="rstat-l">Produtos no Merchant Center</div>
+            <div class="rstat-sub">Todos aprovados com atributos corretos: cor, gênero, idade, dimensões e SEO preenchidos.</div>
+          </div>
+          <div>
+            <div class="rstat-n">35</div>
+            <div class="rstat-l">Temas de pesquisa na PMax</div>
+            <div class="rstat-sub">Campanha estruturada com foco exclusivo em revendedoras B2B, com exclusão de público inadequado.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-label">O que este case demonstra</div>
+      <h2 class="sec-title">Serviços disponíveis para a sua loja.</h2>
+      <p class="sec-sub">Cada frente deste projeto é um serviço que a Lapidio oferece de forma independente ou combinada.</p>
+    </div>
+    <div class="shows-grid">
+      <a href="migracao-nuvemshop-tray.html" class="show-card">
+        <div class="show-card-service">E-commerce</div>
+        <div class="show-card-title">Migração NuvemShop para Tray</div>
+        <div class="show-card-desc">Pipeline automatizado que migra produtos, imagens e categorias em 5 dias úteis por preço fixo.</div>
+        <div class="show-card-link">Ver serviço →</div>
+      </a>
+      <a href="brand-system.html" class="show-card">
+        <div class="show-card-service">Identidade</div>
+        <div class="show-card-title">Brand system</div>
+        <div class="show-card-desc">Paleta, tipografia, tom de voz e aplicação completa na loja ou site, documentados em guia PDF.</div>
+        <div class="show-card-link">Ver serviço →</div>
+      </a>
+      <a href="gestao-digital.html" class="show-card">
+        <div class="show-card-service">Marketing digital</div>
+        <div class="show-card-title">Gestão digital</div>
+        <div class="show-card-desc">GTM, GA4, Merchant Center e Google Ads estruturados com a base certa antes do primeiro anúncio.</div>
+        <div class="show-card-link">Ver serviço →</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<div class="bg-dark">
+  <div class="wrap">
+    <div class="cta-grid">
+      <div>
+        <h2 class="cta-h">Seu projeto pode ser o próximo case.</h2>
+        <p class="cta-sub">Se você tem uma loja que precisa de migração, identidade ou estrutura de marketing digital, a conversa começa aqui.</p>
+        <div class="cta-btns">
+          <a href="https://wa.me/5519982655486?text=Olá!%20Vi%20o%20case%20da%20Loreah%20e%20gostaria%20de%20conversar%20sobre%20meu%20projeto." class="btn" style="background:#25D366;color:white" target="_blank">Falar no WhatsApp</a>
+          <a href="index.html#contato" class="btn btn-o" style="border-color:rgba(255,255,255,0.2);color:rgba(255,255,255,0.7)">Ver todos os serviços</a>
+        </div>
+      </div>
+      <div class="other-cases">
+        <div class="other-cases-title">Outros cases</div>
+        <a href="case-rm-guerra.html" class="other-case-link">
+          <div>
+            <div class="ocl-name">RM Guerra & Cia</div>
+            <div class="ocl-tag">ERP customizado · Fabricante de semijoias</div>
+          </div>
+          <span style="color:rgba(255,255,255,0.3);font-size:16px">→</span>
+        </a>
+        <a href="case-hs-varejos.html" class="other-case-link">
+          <div>
+            <div class="ocl-name">HS Varejos</div>
+            <div class="ocl-tag">ERP financeiro · Mini market em franquia</div>
+          </div>
+          <span style="color:rgba(255,255,255,0.3);font-size:16px">→</span>
+        </a>
+        <a href="case-atual-semjoias.html" class="other-case-link">
+          <div>
+            <div class="ocl-name">Atual Semjoias</div>
+            <div class="ocl-tag">Customizações Tray · E-commerce B2B</div>
+          </div>
+          <span style="color:rgba(255,255,255,0.3);font-size:16px">→</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-inner">
+      <div>
+        <a href="index.html" class="foot-logo">Lapidio<span style="color:var(--amethyst)">.</span></a>
+        <div class="foot-tag">Sua operação mais precisa. · Piracicaba, SP</div>
+      </div>
+      <ul class="foot-links">
+        <li><a href="index.html#servicos">Serviços</a></li>
+        <li><a href="index.html#cases">Cases</a></li>
+        <li><a href="index.html#faq">FAQ</a></li>
+        <li><a href="index.html#contato">Contato</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

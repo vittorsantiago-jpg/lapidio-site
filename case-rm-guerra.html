@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Case RM Guerra & Cia | Lapidio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --stone:#F3EFE8;
+  --pebble:#EAE5DC;
+  --obsidian:#1C1C1A;
+  --amethyst:#A6477E;
+  --amethyst-dark:#7D2F5C;
+  --rose:#F4E0EC;
+  --slate:#5F5E5A;
+  --fog:#8F8D89;
+  --border:#D5D0C8;
+  --card:#FFFFFF;
+  --r:10px;
+}
+
+html{scroll-behavior:smooth}
+body{font-family:'Inter',-apple-system,sans-serif;background:var(--stone);color:var(--obsidian);-webkit-font-smoothing:antialiased;line-height:1.6}
+
+nav{position:sticky;top:0;z-index:50;background:rgba(243,239,232,0.9);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+.nav-wrap{max-width:1120px;margin:0 auto;padding:0 32px;height:60px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:'Space Grotesk',sans-serif;font-size:19px;font-weight:700;color:var(--obsidian);text-decoration:none;letter-spacing:-0.5px}
+.logo span{color:var(--amethyst)}
+nav ul{display:flex;align-items:center;gap:20px;list-style:none}
+nav a.nav-link{font-size:13.5px;color:var(--slate);text-decoration:none;transition:color .15s}
+nav a.nav-link:hover{color:var(--obsidian)}
+
+.btn{display:inline-flex;align-items:center;gap:6px;padding:9px 18px;border-radius:8px;font-family:'Space Grotesk',sans-serif;font-size:13.5px;font-weight:500;text-decoration:none;transition:all .15s;cursor:pointer;border:none;line-height:1}
+.btn-p{background:var(--amethyst);color:white}
+.btn-p:hover{background:var(--amethyst-dark)}
+.btn-o{background:transparent;color:var(--obsidian);border:1px solid var(--border)}
+.btn-o:hover{border-color:var(--amethyst);color:var(--amethyst)}
+
+.wrap{max-width:1120px;margin:0 auto;padding:0 32px}
+section{padding:80px 0}
+.bg-alt{background:var(--pebble)}
+.bg-dark{background:var(--obsidian);padding:80px 0}
+
+.hero{padding:72px 32px 64px;max-width:1120px;margin:0 auto}
+.hero-breadcrumb{font-size:13px;color:var(--fog);margin-bottom:24px;display:flex;align-items:center;gap:8px}
+.hero-breadcrumb a{color:var(--amethyst);text-decoration:none}
+.hero-breadcrumb a:hover{text-decoration:underline}
+.hero-label{font-size:12px;font-weight:600;letter-spacing:1.5px;color:var(--amethyst);text-transform:uppercase;margin-bottom:16px;display:flex;align-items:center;gap:10px}
+.hero-label::before{content:'';display:block;width:24px;height:2px;background:var(--amethyst);border-radius:2px;flex-shrink:0}
+.hero h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(36px,5vw,62px);font-weight:700;letter-spacing:-2px;line-height:1.05;color:var(--obsidian);margin-bottom:16px}
+.hero-tagline{font-size:18px;color:var(--slate);max-width:640px;line-height:1.65;margin-bottom:40px}
+.metrics-strip{display:grid;grid-template-columns:repeat(5,auto);gap:0;border:1px solid var(--border);border-radius:var(--r);overflow:hidden;background:var(--border);width:fit-content;margin-bottom:48px}
+.metric{background:var(--card);padding:18px 24px}
+.metric-n{font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:700;letter-spacing:-1px;color:var(--obsidian);line-height:1;margin-bottom:3px}
+.metric-l{font-size:11px;color:var(--fog);white-space:nowrap}
+.service-tags{display:flex;gap:8px;flex-wrap:wrap}
+.stag{font-size:12px;font-weight:500;background:var(--rose);color:var(--amethyst-dark);border-radius:100px;padding:5px 12px}
+
+.sec-label{font-size:11.5px;font-weight:600;letter-spacing:1.2px;color:var(--amethyst);text-transform:uppercase;margin-bottom:14px}
+.sec-title{font-family:'Space Grotesk',sans-serif;font-size:clamp(26px,3vw,38px);font-weight:700;letter-spacing:-0.8px;line-height:1.1;margin-bottom:14px;color:var(--obsidian)}
+.sec-sub{font-size:16px;color:var(--slate);max-width:500px;line-height:1.6}
+.sec-head{margin-bottom:48px}
+
+/* CONTEXT */
+.context-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+.context-text p{font-size:15px;color:var(--slate);line-height:1.75;margin-bottom:16px}
+.context-text p:last-child{margin-bottom:0}
+.context-info{display:flex;flex-direction:column;gap:12px}
+.info-row{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:16px 20px}
+.info-row-label{font-size:11px;font-weight:600;color:var(--fog);text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px}
+.info-row-value{font-size:14px;color:var(--obsidian);font-weight:500}
+
+/* BEFORE STATE */
+.before-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.before-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:20px}
+.before-icon{font-size:11px;font-weight:700;color:var(--fog);text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px}
+.before-text{font-size:13.5px;color:var(--slate);line-height:1.55}
+
+/* MODULES */
+.modules-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--r);overflow:hidden}
+.module-card{background:var(--card);padding:24px 22px;transition:background .15s}
+.module-card:hover{background:var(--rose)}
+.module-num{font-size:11px;font-weight:700;color:var(--amethyst);letter-spacing:1px;text-transform:uppercase;margin-bottom:10px}
+.module-name{font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:600;color:var(--obsidian);margin-bottom:6px}
+.module-desc{font-size:13px;color:var(--slate);line-height:1.55}
+
+/* INSIGHT */
+.insight{background:var(--rose);border:1px solid rgba(166,71,126,0.2);border-radius:var(--r);padding:24px 28px;margin:24px 0}
+.insight-label{font-size:11px;font-weight:600;color:var(--amethyst-dark);text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px}
+.insight-text{font-size:15px;color:var(--obsidian);line-height:1.65;font-style:italic}
+
+/* TECH STACK */
+.stack-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.stack-col{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:24px}
+.stack-col-title{font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:600;color:var(--obsidian);margin-bottom:14px}
+.stack-items{display:flex;flex-direction:column;gap:10px}
+.stack-item{display:flex;gap:10px;align-items:flex-start}
+.stack-item-name{font-size:13px;font-weight:500;color:var(--obsidian);margin-bottom:2px}
+.stack-item-desc{font-size:12px;color:var(--fog);line-height:1.4}
+
+/* RESULTS */
+.results-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.result-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:28px 24px}
+.result-area{font-size:11px;font-weight:600;color:var(--amethyst);text-transform:uppercase;letter-spacing:.5px;margin-bottom:16px}
+.rstat-n{font-family:'Space Grotesk',sans-serif;font-size:32px;font-weight:700;letter-spacing:-1.5px;color:var(--obsidian);line-height:1;margin-bottom:3px}
+.rstat-l{font-size:12px;color:var(--fog);margin-bottom:6px}
+.rstat-sub{font-size:13px;color:var(--slate);line-height:1.5}
+
+/* SHOWS */
+.shows-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.show-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:24px;text-decoration:none;transition:border-color .15s,background .15s;display:block}
+.show-card:hover{border-color:var(--amethyst);background:var(--rose)}
+.show-card-service{font-size:11px;font-weight:600;color:var(--amethyst);text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px}
+.show-card-title{font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:600;color:var(--obsidian);margin-bottom:6px;line-height:1.3}
+.show-card-desc{font-size:13px;color:var(--slate);line-height:1.55}
+.show-card-link{font-size:12px;font-weight:500;color:var(--amethyst);margin-top:12px;display:block}
+
+/* CTA */
+.cta-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.cta-h{font-family:'Space Grotesk',sans-serif;font-size:clamp(24px,3vw,36px);font-weight:700;letter-spacing:-0.8px;color:white;line-height:1.1;margin-bottom:12px}
+.cta-sub{font-size:15px;color:rgba(255,255,255,0.5);margin-bottom:28px;line-height:1.6}
+.cta-btns{display:flex;gap:12px;flex-wrap:wrap}
+.other-cases{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:var(--r);padding:24px}
+.other-cases-title{font-size:13px;font-weight:500;color:rgba(255,255,255,0.5);margin-bottom:16px}
+.other-case-link{display:flex;align-items:center;justify-content:space-between;padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.08);text-decoration:none;transition:opacity .15s}
+.other-case-link:last-child{border-bottom:none;padding-bottom:0}
+.other-case-link:hover{opacity:.7}
+.ocl-name{font-size:14px;font-weight:500;color:white}
+.ocl-tag{font-size:11px;color:rgba(255,255,255,0.4)}
+
+footer{background:var(--pebble);border-top:1px solid var(--border);padding:40px 0}
+.foot-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px}
+.foot-logo{font-family:'Space Grotesk',sans-serif;font-size:17px;font-weight:700;color:var(--obsidian);text-decoration:none;display:block;margin-bottom:3px}
+.foot-tag{font-size:12px;color:var(--fog)}
+.foot-links{display:flex;gap:24px;list-style:none}
+.foot-links a{font-size:13px;color:var(--fog);text-decoration:none;transition:color .15s}
+.foot-links a:hover{color:var(--obsidian)}
+
+@media(max-width:760px){
+  .nav-wrap{padding:0 20px}
+  nav ul li.hide-mobile{display:none}
+  .hero{padding:48px 20px 48px}
+  .wrap{padding:0 20px}
+  .context-grid,.before-grid,.stack-grid,.results-grid,.shows-grid,.cta-grid{grid-template-columns:1fr}
+  .modules-grid{grid-template-columns:1fr}
+  .metrics-strip{grid-template-columns:repeat(3,auto)}
+  section{padding:60px 0}
+  .foot-inner{flex-direction:column}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-wrap">
+    <a href="index.html" class="logo">Lapidio<span>.</span></a>
+    <ul>
+      <li class="hide-mobile"><a href="index.html#cases" class="nav-link">Cases</a></li>
+      <li class="hide-mobile"><a href="index.html#servicos" class="nav-link">Serviços</a></li>
+      <li><a href="index.html#contato" class="btn btn-p">Falar no WhatsApp</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-breadcrumb">
+    <a href="index.html">Lapidio</a>
+    <span>›</span>
+    <span>Cases</span>
+    <span>›</span>
+    <span>RM Guerra & Cia</span>
+  </div>
+  <div class="hero-label">Case completo · Fabricante de semijoias</div>
+  <h1>RM Guerra & Cia</h1>
+  <p class="hero-tagline">ERP completo desenvolvido do zero para um fabricante de semijoias que operava com planilhas isoladas e sem visibilidade real do custo de produção.</p>
+  <div class="metrics-strip">
+    <div class="metric"><div class="metric-n">2.700+</div><div class="metric-l">Produtos cadastrados</div></div>
+    <div class="metric"><div class="metric-n">21</div><div class="metric-l">Tabelas no banco</div></div>
+    <div class="metric"><div class="metric-n">9</div><div class="metric-l">Módulos funcionais</div></div>
+    <div class="metric"><div class="metric-n">3</div><div class="metric-l">Níveis de acesso</div></div>
+    <div class="metric"><div class="metric-n">100%</div><div class="metric-l">Em produção ativa</div></div>
+  </div>
+  <div class="service-tags">
+    <span class="stag">ERP customizado</span>
+    <span class="stag">FastAPI + React</span>
+    <span class="stag">PostgreSQL</span>
+    <span class="stag">Supabase</span>
+    <span class="stag">Railway + Vercel</span>
+  </div>
+</div>
+
+<section class="bg-alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-label">O contexto</div>
+      <h2 class="sec-title">Quem é a RM Guerra.</h2>
+    </div>
+    <div class="context-grid">
+      <div class="context-text">
+        <p>A RM Guerra & Cia é um fabricante de semijoias em aço inox 304 e 316L localizado em Piracicaba, SP. A empresa opera com duas marcas distintas: a RM Guerra, voltada para revendedoras B2B, e a Loreah Acessórios, a marca de frente para o consumidor final e atacadistas.</p>
+        <p>Com um catálogo extenso de produtos e processos de produção que envolvem matéria-prima, montagem e expedição, a operação cresceu além do que planilhas conseguiam controlar. O custo real de cada produto era calculado manualmente, as fichas técnicas viviam em arquivos desconectados e o financeiro das duas marcas ficava misturado em um mesmo controle.</p>
+        <p>O sistema nasceu da necessidade real de quem conhece a operação por dentro. Cada módulo foi desenhado para resolver um problema específico identificado no dia a dia da empresa, o que eliminou o ruído habitual entre quem pede um sistema e quem o constrói.</p>
+      </div>
+      <div class="context-info">
+        <div class="info-row">
+          <div class="info-row-label">Segmento</div>
+          <div class="info-row-value">Fabricante de semijoias em aço inox</div>
+        </div>
+        <div class="info-row">
+          <div class="info-row-label">Marcas operadas</div>
+          <div class="info-row-value">RM Guerra & Cia + Loreah Acessórios</div>
+        </div>
+        <div class="info-row">
+          <div class="info-row-label">Controle anterior</div>
+          <div class="info-row-value">Planilhas Excel isoladas por área</div>
+        </div>
+        <div class="info-row">
+          <div class="info-row-label">Sistema atual</div>
+          <div class="info-row-value">rmguerraecia.com.br</div>
+        </div>
+        <div class="info-row">
+          <div class="info-row-label">Status</div>
+          <div class="info-row-value">Em produção ativa</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-label">Ponto de partida</div>
+      <h2 class="sec-title">O que existia antes do sistema.</h2>
+    </div>
+    <div class="before-grid">
+      <div class="before-card">
+        <div class="before-icon">× Custo de produção</div>
+        <div class="before-text">O custo real de cada produto era estimado, não calculado. Sem rastreamento de matéria-prima consumida por peça, a margem de lucro era baseada em intuição.</div>
+      </div>
+      <div class="before-card">
+        <div class="before-icon">× Fichas técnicas</div>
+        <div class="before-text">Informações de composição de cada produto viviam em arquivos desconectados, sem padronização e difíceis de atualizar quando o processo mudava.</div>
+      </div>
+      <div class="before-card">
+        <div class="before-icon">× Controle de produção</div>
+        <div class="before-text">Ordens de produção sem rastreabilidade. Sem registro de etapas, quantidades produzidas ou status de cada lote em andamento.</div>
+      </div>
+      <div class="before-card">
+        <div class="before-icon">× Financeiro separado</div>
+        <div class="before-text">As duas marcas (RM Guerra e Loreah) não tinham separação financeira clara. Visualizar o resultado de cada uma exigia cruzamento manual de planilhas.</div>
+      </div>
+      <div class="before-card">
+        <div class="before-icon">× Catálogo centralizado</div>
+        <div class="before-text">Sem um cadastro único de produtos com preço, custo, composição e foto em um só lugar. A informação estava distribuída entre arquivos de diferentes pessoas.</div>
+      </div>
+      <div class="before-card">
+        <div class="before-icon">× Romaneio de entrega</div>
+        <div class="before-text">Documentos de expedição eram montados manualmente, sem padronização visual e com risco de erro de digitação a cada novo pedido.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-label">O que foi construído</div>
+      <h2 class="sec-title">Nove módulos. Uma plataforma.</h2>
+      <p class="sec-sub">Cada módulo resolve um problema específico da operação. Todos integrados em um único sistema acessível pelo navegador.</p>
+    </div>
+    <div class="modules-grid">
+      <div class="module-card">
+        <div class="module-num">Módulo 01</div>
+        <div class="module-name">Dashboard gerencial</div>
+        <div class="module-desc">Indicadores financeiros e operacionais em tempo real. Visão consolidada da operação de ambas as marcas com os números que importam.</div>
+      </div>
+      <div class="module-card">
+        <div class="module-num">Módulo 02</div>
+        <div class="module-name">Gestão de produtos</div>
+        <div class="module-desc">Cadastro completo com foto, composição, custo de produção calculado automaticamente, preço de venda e margem. Importação em massa via Excel para os 2.700+ produtos.</div>
+      </div>
+      <div class="module-card">
+        <div class="module-num">Módulo 03</div>
+        <div class="module-name">Matéria-prima</div>
+        <div class="module-desc">Cadastro e rastreamento de insumos com custo por unidade, fornecedor vinculado e consumo por produto. Base para o cálculo real de custo de produção.</div>
+      </div>
+      <div class="module-card">
+        <div class="module-num">Módulo 04</div>
+        <div class="module-name">Fornecedores</div>
+        <div class="module-desc">Cadastro centralizado de fornecedores com histórico de compras, contato e materiais fornecidos. Vinculado diretamente ao módulo de matéria-prima.</div>
+      </div>
+      <div class="module-card">
+        <div class="module-num">Módulo 05</div>
+        <div class="module-name">Ordens de produção</div>
+        <div class="module-desc">Registro e acompanhamento de cada ordem com status, quantidade, responsável e data prevista. Rastreabilidade completa do que está sendo produzido.</div>
+      </div>
+      <div class="module-card">
+        <div class="module-num">Módulo 06</div>
+        <div class="module-name">Relatório de margens</div>
+        <div class="module-desc">Análise de rentabilidade por produto, categoria e marca. Compara custo real com preço praticado e aponta onde a margem está sendo comprimida.</div>
+      </div>
+      <div class="module-card">
+        <div class="module-num">Módulo 07</div>
+        <div class="module-name">Módulo financeiro</div>
+        <div class="module-desc">Contas a pagar e receber com separação por marca. RM Guerra e Loreah com fluxo de caixa e resultado independentes, consolidáveis em uma visão única.</div>
+      </div>
+      <div class="module-card">
+        <div class="module-num">Módulo 08</div>
+        <div class="module-name">Romaneio de entrega</div>
+        <div class="module-desc">Geração de romaneio em PDF com a identidade visual da empresa. Lista de produtos, quantidades e destinatário com um clique, sem digitação manual.</div>
+      </div>
+      <div class="module-card">
+        <div class="module-num">Módulo 09</div>
+        <div class="module-name">Usuários e segurança</div>
+        <div class="module-desc">Três perfis de acesso com permissões distintas: Admin, Operador e Financeiro. Cada usuário vê e edita apenas o que é relevante para sua função.</div>
+      </div>
+    </div>
+
+    <div class="insight">
+      <div class="insight-label">Por que isso funcionou</div>
+      <div class="insight-text">O sistema foi construído por alguém que conhece a operação por dentro. Isso eliminou o ciclo de "levantamento de requisitos" que normalmente produz sistemas que resolvem o que o cliente disse, não o que o cliente precisa. Cada módulo nasceu de um problema concreto observado na prática, não de uma especificação em documento.</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-label">Arquitetura técnica</div>
+      <h2 class="sec-title">Stack moderna e de baixo custo operacional.</h2>
+      <p class="sec-sub">Tecnologias escolhidas para robustez, escalabilidade e custo de infraestrutura mínimo para uma pequena empresa.</p>
+    </div>
+    <div class="stack-grid">
+      <div class="stack-col">
+        <div class="stack-col-title">Frontend</div>
+        <div class="stack-items">
+          <div class="stack-item">
+            <div>
+              <div class="stack-item-name">React + Vite</div>
+              <div class="stack-item-desc">Interface construída em componentes React com Vite para build otimizado. Hospedado no Vercel com deploy automático via GitHub.</div>
+            </div>
+          </div>
+          <div class="stack-item">
+            <div>
+              <div class="stack-item-name">TypeScript</div>
+              <div class="stack-item-desc">Tipagem estática em todo o frontend, reduzindo erros em tempo de execução e facilitando manutenção futura.</div>
+            </div>
+          </div>
+          <div class="stack-item">
+            <div>
+              <div class="stack-item-name">JWT Authentication</div>
+              <div class="stack-item-desc">Autenticação com JSON Web Tokens, controle de sessão e permissões por perfil diretamente no cliente.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="stack-col">
+        <div class="stack-col-title">Backend e banco de dados</div>
+        <div class="stack-items">
+          <div class="stack-item">
+            <div>
+              <div class="stack-item-name">FastAPI + Python</div>
+              <div class="stack-item-desc">API REST construída em FastAPI com Python. Hospedada no Railway com deploy automático e variáveis de ambiente seguras.</div>
+            </div>
+          </div>
+          <div class="stack-item">
+            <div>
+              <div class="stack-item-name">PostgreSQL via Supabase</div>
+              <div class="stack-item-desc">Banco relacional com 21 tabelas, Row Level Security ativado e backups automáticos. Supabase como BaaS para Auth e Storage.</div>
+            </div>
+          </div>
+          <div class="stack-item">
+            <div>
+              <div class="stack-item-name">Omie API</div>
+              <div class="stack-item-desc">Integração com o Omie para sincronização fiscal. Importação e exportação de dados entre o ERP interno e o sistema contábil da empresa.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-label">Resultados</div>
+      <h2 class="sec-title">O que o sistema entrega hoje.</h2>
+    </div>
+    <div class="results-grid">
+      <div class="result-card">
+        <div class="result-area">Catálogo</div>
+        <div class="rstat-n">2.700+</div>
+        <div class="rstat-l">Produtos cadastrados</div>
+        <div class="rstat-sub" style="margin-top:8px">Importados via Excel em lote, com foto, composição, custo calculado e preço de venda definido por produto.</div>
+      </div>
+      <div class="result-card">
+        <div class="result-area">Banco de dados</div>
+        <div class="rstat-n">21</div>
+        <div class="rstat-l">Tabelas no PostgreSQL</div>
+        <div class="rstat-sub" style="margin-top:8px">Estrutura relacional que conecta produtos, matéria-prima, fornecedores, ordens de produção e lançamentos financeiros.</div>
+      </div>
+      <div class="result-card">
+        <div class="result-area">Acesso e segurança</div>
+        <div class="rstat-n">3</div>
+        <div class="rstat-l">Perfis de acesso</div>
+        <div class="rstat-sub" style="margin-top:8px">Admin, Operador e Financeiro com permissões granulares. Cada usuário acessa apenas o que precisa para sua função.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-label">O que este case demonstra</div>
+      <h2 class="sec-title">Serviços disponíveis para o seu negócio.</h2>
+    </div>
+    <div class="shows-grid">
+      <a href="erp-customizado.html" class="show-card">
+        <div class="show-card-service">Sistema</div>
+        <div class="show-card-title">ERP customizado</div>
+        <div class="show-card-desc">Desenvolvimento de sistemas de gestão sob medida para pequenas empresas que cresceram além do que planilhas suportam.</div>
+        <div class="show-card-link">Ver serviço →</div>
+      </a>
+      <a href="case-loreah.html" class="show-card">
+        <div class="show-card-service">Case relacionado</div>
+        <div class="show-card-title">Loreah Acessórios</div>
+        <div class="show-card-desc">A marca de frente da RM Guerra recebeu migração de e-commerce, brand system e infraestrutura de marketing digital.</div>
+        <div class="show-card-link">Ver case →</div>
+      </a>
+      <a href="index.html#contato" class="show-card">
+        <div class="show-card-service">Próximo passo</div>
+        <div class="show-card-title">Diagnóstico gratuito</div>
+        <div class="show-card-desc">Antes de qualquer proposta, entendemos a operação atual e se um sistema resolve o problema real do seu negócio.</div>
+        <div class="show-card-link">Solicitar diagnóstico →</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<div class="bg-dark">
+  <div class="wrap">
+    <div class="cta-grid">
+      <div>
+        <h2 class="cta-h">Sua operação ainda depende de planilha?</h2>
+        <p class="cta-sub">Conta como funciona hoje. A gente avalia o que faz sentido construir e quanto tempo levaria para a sua operação ter o mesmo nível de controle.</p>
+        <div class="cta-btns">
+          <a href="https://wa.me/5519982655486?text=Olá!%20Vi%20o%20case%20da%20RM%20Guerra%20e%20gostaria%20de%20conversar%20sobre%20um%20ERP%20para%20minha%20empresa." class="btn" style="background:#25D366;color:white" target="_blank">Falar no WhatsApp</a>
+          <a href="erp-customizado.html" class="btn btn-o" style="border-color:rgba(255,255,255,0.2);color:rgba(255,255,255,0.7)">Ver o serviço de ERP</a>
+        </div>
+      </div>
+      <div class="other-cases">
+        <div class="other-cases-title">Outros cases</div>
+        <a href="case-loreah.html" class="other-case-link">
+          <div>
+            <div class="ocl-name">Loreah Acessórios</div>
+            <div class="ocl-tag">Migração · Brand system · Google Ads</div>
+          </div>
+          <span style="color:rgba(255,255,255,0.3);font-size:16px">→</span>
+        </a>
+        <a href="case-hs-varejos.html" class="other-case-link">
+          <div>
+            <div class="ocl-name">HS Varejos</div>
+            <div class="ocl-tag">ERP financeiro · Mini market em franquia</div>
+          </div>
+          <span style="color:rgba(255,255,255,0.3);font-size:16px">→</span>
+        </a>
+        <a href="case-atual-semjoias.html" class="other-case-link">
+          <div>
+            <div class="ocl-name">Atual Semjoias</div>
+            <div class="ocl-tag">Customizações Tray · E-commerce B2B</div>
+          </div>
+          <span style="color:rgba(255,255,255,0.3);font-size:16px">→</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-inner">
+      <div>
+        <a href="index.html" class="foot-logo">Lapidio<span style="color:var(--amethyst)">.</span></a>
+        <div class="foot-tag">Sua operação mais precisa. · Piracicaba, SP</div>
+      </div>
+      <ul class="foot-links">
+        <li><a href="index.html#servicos">Serviços</a></li>
+        <li><a href="index.html#cases">Cases</a></li>
+        <li><a href="index.html#faq">FAQ</a></li>
+        <li><a href="index.html#contato">Contato</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
