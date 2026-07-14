@@ -72,8 +72,10 @@ section{padding:88px 0}
 
 /* SERVICES */
 .srv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--r);overflow:hidden}
-.srv-card{background:var(--card);padding:32px 28px;transition:background .15s}
+.srv-card{background:var(--card);padding:32px 28px;transition:background .15s;display:block;text-decoration:none;color:inherit;cursor:pointer}
 .srv-card:hover{background:var(--rose)}
+.srv-link{font-size:12px;font-weight:500;color:var(--amethyst);margin-top:14px;display:inline-flex;align-items:center;gap:4px;opacity:0;transition:opacity .15s}
+.srv-card:hover .srv-link{opacity:1}
 .srv-tag{font-size:11px;font-weight:600;color:var(--amethyst);letter-spacing:.5px;margin-bottom:14px;text-transform:uppercase}
 .srv-name{font-family:'Space Grotesk',sans-serif;font-size:17px;font-weight:600;color:var(--obsidian);margin-bottom:10px;line-height:1.25}
 .srv-desc{font-size:13.5px;color:var(--slate);line-height:1.6;margin-bottom:20px}
@@ -191,42 +193,48 @@ footer{background:var(--pebble);border-top:1px solid var(--border);padding:40px 
       <p class="sec-sub">Do sistema de gestão à loja online, cada entrega é construída para durar e crescer com o seu negócio.</p>
     </div>
     <div class="srv-grid">
-      <div class="srv-card">
+      <a href="erp-customizado.html" class="srv-card">
         <div class="srv-tag">Sistema</div>
         <div class="srv-name">ERP customizado</div>
         <div class="srv-desc">Sistema de gestão sob medida: produtos, produção, financeiro e relatórios em uma única plataforma web, acessível de qualquer lugar.</div>
         <div class="srv-price">A partir de R$ 6.000</div>
-      </div>
-      <div class="srv-card">
+        <div class="srv-link">Ver mais →</div>
+      </a>
+      <a href="migracao-nuvemshop-tray.html" class="srv-card">
         <div class="srv-tag">E-commerce</div>
         <div class="srv-name">Migração NuvemShop → Tray</div>
         <div class="srv-desc">Migração completa em 5 dias úteis, com imagens otimizadas e categorias em hierarquia. Preço fixo, sem surpresa no final.</div>
         <div class="srv-price">R$ 2.200 · preço fixo</div>
-      </div>
-      <div class="srv-card">
+        <div class="srv-link">Ver mais →</div>
+      </a>
+      <a href="gestao-digital.html" class="srv-card">
         <div class="srv-tag">Marketing digital</div>
         <div class="srv-name">Gestão digital</div>
         <div class="srv-desc">Google Ads, Merchant Center, GTM e GA4 estruturados para lojas que querem vender mais com dados reais como base das decisões.</div>
         <div class="srv-price">A partir de R$ 1.500/mês</div>
-      </div>
-      <div class="srv-card">
+        <div class="srv-link">Ver mais →</div>
+      </a>
+      <a href="sites-institucionais.html" class="srv-card">
         <div class="srv-tag">Presença</div>
         <div class="srv-name">Sites institucionais</div>
         <div class="srv-desc">Presença web profissional, responsiva e otimizada para conversão. Pronto para receber clientes em qualquer dispositivo.</div>
         <div class="srv-price">A partir de R$ 1.200</div>
-      </div>
-      <div class="srv-card">
+        <div class="srv-link">Ver mais →</div>
+      </a>
+      <a href="brand-system.html" class="srv-card">
         <div class="srv-tag">Identidade</div>
         <div class="srv-name">Brand system</div>
         <div class="srv-desc">Paleta, tipografia, tom de voz e identidade visual documentados para que a sua marca seja consistente em todo canal.</div>
         <div class="srv-price">A partir de R$ 1.200</div>
-      </div>
-      <div class="srv-card">
+        <div class="srv-link">Ver mais →</div>
+      </a>
+      <a href="customizacoes-tray.html" class="srv-card">
         <div class="srv-tag">Tray</div>
         <div class="srv-name">Customizações Tray</div>
         <div class="srv-desc">Funcionalidades e ajustes visuais no tema da sua loja Tray: stepper de quantidade, mensagens dinâmicas e muito mais.</div>
         <div class="srv-price">A partir de R$ 600</div>
-      </div>
+        <div class="srv-link">Ver mais →</div>
+      </a>
     </div>
   </div>
 </section>
