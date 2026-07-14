@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gestão Digital | Lapidio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --stone:#F3EFE8;
+  --pebble:#EAE5DC;
+  --obsidian:#1C1C1A;
+  --amethyst:#A6477E;
+  --amethyst-dark:#7D2F5C;
+  --rose:#F4E0EC;
+  --slate:#5F5E5A;
+  --fog:#8F8D89;
+  --border:#D5D0C8;
+  --card:#FFFFFF;
+  --r:10px;
+}
+
+html{scroll-behavior:smooth}
+body{font-family:'Inter',-apple-system,sans-serif;background:var(--stone);color:var(--obsidian);-webkit-font-smoothing:antialiased;line-height:1.6}
+
+nav{position:sticky;top:0;z-index:50;background:rgba(243,239,232,0.9);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+.nav-wrap{max-width:1120px;margin:0 auto;padding:0 32px;height:60px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:'Space Grotesk',sans-serif;font-size:19px;font-weight:700;color:var(--obsidian);text-decoration:none;letter-spacing:-0.5px}
+.logo span{color:var(--amethyst)}
+nav ul{display:flex;align-items:center;gap:20px;list-style:none}
+nav a.nav-link{font-size:13.5px;color:var(--slate);text-decoration:none;transition:color .15s}
+nav a.nav-link:hover{color:var(--obsidian)}
+
+.btn{display:inline-flex;align-items:center;gap:6px;padding:9px 18px;border-radius:8px;font-family:'Space Grotesk',sans-serif;font-size:13.5px;font-weight:500;text-decoration:none;transition:all .15s;cursor:pointer;border:none;line-height:1}
+.btn-p{background:var(--amethyst);color:white}
+.btn-p:hover{background:var(--amethyst-dark)}
+.btn-o{background:transparent;color:var(--obsidian);border:1px solid var(--border)}
+.btn-o:hover{border-color:var(--amethyst);color:var(--amethyst)}
+.btn-wa{background:#25D366;color:white}
+.btn-wa:hover{background:#1fbb57}
+.btn-submit{background:var(--amethyst);color:white;width:100%;justify-content:center;font-size:14px;padding:12px 18px}
+.btn-submit:hover{background:var(--amethyst-dark)}
+
+.wrap{max-width:1120px;margin:0 auto;padding:0 32px}
+section{padding:80px 0}
+.bg-alt{background:var(--pebble)}
+.bg-dark{background:var(--obsidian);padding:80px 0}
+
+.hero{padding:72px 32px 64px;max-width:1120px;margin:0 auto}
+.hero-breadcrumb{font-size:13px;color:var(--fog);margin-bottom:24px;display:flex;align-items:center;gap:8px}
+.hero-breadcrumb a{color:var(--amethyst);text-decoration:none}
+.hero-breadcrumb a:hover{text-decoration:underline}
+.hero-pre{font-size:12px;font-weight:600;letter-spacing:1.5px;color:var(--amethyst);text-transform:uppercase;margin-bottom:20px;display:flex;align-items:center;gap:10px}
+.hero-pre::before{content:'';display:block;width:24px;height:2px;background:var(--amethyst);border-radius:2px;flex-shrink:0}
+.hero h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(36px,5vw,62px);font-weight:700;letter-spacing:-2px;line-height:1.05;color:var(--obsidian);margin-bottom:20px;max-width:760px}
+.hero h1 .ac{color:var(--amethyst)}
+.hero-sub{font-size:18px;color:var(--slate);max-width:580px;line-height:1.65;margin-bottom:36px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:56px}
+.hero-pills{display:flex;gap:10px;flex-wrap:wrap}
+.pill{display:inline-flex;align-items:center;gap:6px;background:var(--card);border:1px solid var(--border);border-radius:100px;padding:6px 14px;font-size:13px;color:var(--slate)}
+.pill-dot{width:6px;height:6px;border-radius:50%;background:var(--amethyst);flex-shrink:0}
+
+.sec-label{font-size:11.5px;font-weight:600;letter-spacing:1.2px;color:var(--amethyst);text-transform:uppercase;margin-bottom:14px}
+.sec-title{font-family:'Space Grotesk',sans-serif;font-size:clamp(26px,3vw,38px);font-weight:700;letter-spacing:-0.8px;line-height:1.1;margin-bottom:14px;color:var(--obsidian)}
+.sec-sub{font-size:16px;color:var(--slate);max-width:500px;line-height:1.6}
+.sec-head{margin-bottom:48px}
+
+/* SERVICES INCLUDED */
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--r);overflow:hidden}
+.srv-block{background:var(--card);padding:32px 28px;transition:background .15s}
+.srv-block:hover{background:var(--rose)}
+.srv-block-tag{font-size:11px;font-weight:600;color:var(--amethyst);letter-spacing:.5px;text-transform:uppercase;margin-bottom:14px}
+.srv-block-name{font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:600;color:var(--obsidian);margin-bottom:12px;line-height:1.2}
+.srv-block-desc{font-size:13.5px;color:var(--slate);line-height:1.6;margin-bottom:20px}
+.srv-block-items{display:flex;flex-direction:column;gap:8px}
+.srv-block-item{font-size:13px;color:var(--slate);display:flex;gap:8px;align-items:flex-start}
+
+/* WHAT WE DON'T DO */
+.honest-box{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:32px;margin-top:16px}
+.honest-title{font-family:'Space Grotesk',sans-serif;font-size:16px;font-weight:600;color:var(--obsidian);margin-bottom:12px}
+.honest-desc{font-size:14px;color:var(--slate);line-height:1.65}
+
+/* CASE */
+.case-block{background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden}
+.case-header{padding:32px;border-bottom:1px solid var(--border);background:var(--rose)}
+.case-tag{font-size:11px;font-weight:600;color:var(--amethyst-dark);text-transform:uppercase;letter-spacing:.5px;margin-bottom:10px}
+.case-name{font-family:'Space Grotesk',sans-serif;font-size:28px;font-weight:700;letter-spacing:-0.8px;color:var(--obsidian);margin-bottom:8px}
+.case-context{font-size:14px;color:var(--slate);line-height:1.6;max-width:680px}
+.case-body{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
+.case-col{padding:28px 32px;border-right:1px solid var(--border)}
+.case-col:last-child{border-right:none}
+.case-col-title{font-size:11px;font-weight:600;color:var(--fog);text-transform:uppercase;letter-spacing:.5px;margin-bottom:16px}
+.case-stat{margin-bottom:16px}
+.cs-n{font-family:'Space Grotesk',sans-serif;font-size:28px;font-weight:700;letter-spacing:-1px;color:var(--obsidian);line-height:1;margin-bottom:4px}
+.cs-l{font-size:12px;color:var(--fog)}
+.case-list{display:flex;flex-direction:column;gap:8px}
+.case-list-item{font-size:13.5px;color:var(--slate);display:flex;gap:8px;align-items:flex-start;line-height:1.5}
+
+/* PROCESS */
+.process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--r);overflow:hidden}
+.proc-card{background:var(--card);padding:28px 24px;transition:background .15s}
+.proc-card:hover{background:var(--rose)}
+.proc-num{font-family:'Space Grotesk',sans-serif;font-size:32px;font-weight:700;letter-spacing:-1.5px;color:var(--rose);line-height:1;margin-bottom:16px}
+.proc-title{font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:600;color:var(--obsidian);margin-bottom:8px}
+.proc-desc{font-size:13px;color:var(--slate);line-height:1.6}
+
+/* PRICING */
+.pricing-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.price-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:36px}
+.price-tag{font-size:11px;font-weight:600;color:var(--amethyst);letter-spacing:1px;text-transform:uppercase;margin-bottom:16px}
+.price-name{font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:600;color:var(--obsidian);margin-bottom:8px}
+.price-value{font-family:'Space Grotesk',sans-serif;font-size:42px;font-weight:700;letter-spacing:-2px;color:var(--obsidian);line-height:1;margin-bottom:6px}
+.price-sub{font-size:13px;color:var(--fog);margin-bottom:24px}
+.price-rows{display:flex;flex-direction:column;gap:10px;margin-bottom:28px}
+.price-row{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--slate)}
+.pr-dot{width:5px;height:5px;border-radius:50%;background:var(--amethyst);flex-shrink:0;margin-top:7px}
+.info-card{background:var(--pebble);border:1px solid var(--border);border-radius:var(--r);padding:32px;display:flex;flex-direction:column;gap:20px}
+.info-item-title{font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:600;color:var(--obsidian);margin-bottom:6px}
+.info-item-desc{font-size:13.5px;color:var(--slate);line-height:1.6}
+
+/* FAQ */
+.faq-list{display:flex;flex-direction:column;gap:12px}
+.faq-item{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:24px 28px}
+.faq-q{font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:600;color:var(--obsidian);margin-bottom:10px;line-height:1.3}
+.faq-a{font-size:13.5px;color:var(--slate);line-height:1.65}
+
+/* CONTACT */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+.cta-h{font-family:'Space Grotesk',sans-serif;font-size:clamp(26px,3vw,38px);font-weight:700;letter-spacing:-0.8px;color:white;line-height:1.1;margin-bottom:12px}
+.cta-sub{font-size:15px;color:rgba(255,255,255,0.5);margin-bottom:32px;line-height:1.6}
+.cform-wrap{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:32px}
+.cform{display:flex;flex-direction:column;gap:16px}
+.field{display:flex;flex-direction:column;gap:6px}
+.field label{font-size:12px;font-weight:500;color:rgba(255,255,255,0.55);letter-spacing:.3px}
+.field input,.field select,.field textarea{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:8px;padding:11px 14px;font-family:'Inter',sans-serif;font-size:14px;color:white;transition:border-color .15s;resize:none;width:100%}
+.field input::placeholder,.field textarea::placeholder{color:rgba(255,255,255,0.28)}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--amethyst)}
+.field select{cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='rgba(255,255,255,0.4)' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center}
+.field select option{background:#2c2c2a;color:white}
+
+footer{background:var(--pebble);border-top:1px solid var(--border);padding:40px 0}
+.foot-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px}
+.foot-logo{font-family:'Space Grotesk',sans-serif;font-size:17px;font-weight:700;color:var(--obsidian);text-decoration:none;display:block;margin-bottom:3px}
+.foot-tag{font-size:12px;color:var(--fog)}
+.foot-links{display:flex;gap:24px;list-style:none}
+.foot-links a{font-size:13px;color:var(--fog);text-decoration:none;transition:color .15s}
+.foot-links a:hover{color:var(--obsidian)}
+
+@media(max-width:760px){
+  .nav-wrap{padding:0 20px}
+  nav ul li.hide-mobile{display:none}
+  .hero{padding:48px 20px 48px}
+  .wrap{padding:0 20px}
+  .services-grid,.process-grid,.pricing-grid,.contact-grid{grid-template-columns:1fr}
+  .case-body{grid-template-columns:1fr}
+  .case-col{border-right:none;border-bottom:1px solid var(--border)}
+  .case-col:last-child{border-bottom:none}
+  section{padding:60px 0}
+  .foot-inner{flex-direction:column}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-wrap">
+    <a href="index.html" class="logo">Lapidio<span>.</span></a>
+    <ul>
+      <li class="hide-mobile"><a href="index.html#servicos" class="nav-link">Serviços</a></li>
+      <li class="hide-mobile"><a href="index.html#cases" class="nav-link">Cases</a></li>
+      <li><a href="#contato" class="btn btn-p">Falar no WhatsApp</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-breadcrumb">
+    <a href="index.html">Lapidio</a>
+    <span>›</span>
+    <span>Serviços</span>
+    <span>›</span>
+    <span>Gestão digital</span>
+  </div>
+  <div class="hero-pre">Serviço recorrente · Marketing digital</div>
+  <h1>Anunciar sem dados<br>é <span class="ac">adivinhar.</span></h1>
+  <p class="hero-sub">Estruturamos Google Ads, Merchant Center, GTM e GA4 para lojas que querem tomar decisões com base em números reais, não em intuição.</p>
+  <div class="hero-actions">
+    <a href="#contato" class="btn btn-p">Solicitar diagnóstico →</a>
+    <a href="#case" class="btn btn-o">Ver case real</a>
+  </div>
+  <div class="hero-pills">
+    <div class="pill"><div class="pill-dot"></div>A partir de R$ 1.500/mês</div>
+    <div class="pill"><div class="pill-dot"></div>Rastreamento completo</div>
+    <div class="pill"><div class="pill-dot"></div>Google Ads + Merchant Center</div>
+    <div class="pill"><div class="pill-dot"></div>Case real ativo</div>
+  </div>
+</div>
+
+<section class="bg-alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-label">O que fazemos</div>
+      <h2 class="sec-title">Três frentes. Uma operação coesa.</h2>
+      <p class="sec-sub">Cada frente resolve um problema específico. Juntas, formam uma estrutura de marketing digital que funciona de verdade.</p>
+    </div>
+    <div class="services-grid">
+      <div class="srv-block">
+        <div class="srv-block-tag">Rastreamento</div>
+        <div class="srv-block-name">GTM + GA4</div>
+        <div class="srv-block-desc">Sem rastreamento correto, você não sabe de onde vêm os clientes, o que funciona nem onde perde conversões. Configuramos o GA4 via GTM como única fonte de tags, mapeamos o funil completo de checkout e monitoramos eventos que importam.</div>
+        <div class="srv-block-items">
+          <div class="srv-block-item"><span style="color:var(--amethyst);flex-shrink:0">✓</span><span>GTM configurado como única fonte de tags</span></div>
+          <div class="srv-block-item"><span style="color:var(--amethyst);flex-shrink:0">✓</span><span>GA4 com funil de checkout mapeado em etapas</span></div>
+          <div class="srv-block-item"><span style="color:var(--amethyst);flex-shrink:0">✓</span><span>Eventos de conversão e abandono configurados</span></div>
+          <div class="srv-block-item"><span style="color:var(--amethyst);flex-shrink:0">✓</span><span>Relatório mensal de performance</span></div>
+        </div>
+      </div>
+      <div class="srv-block">
+        <div class="srv-block-tag">Catálogo</div>
+        <div class="srv-block-name">Merchant Center</div>
+        <div class="srv-block-desc">O Merchant Center é o que coloca seus produtos no Google Shopping e nas campanhas Performance Max. Sem ele configurado corretamente, seus produtos ficam reprovados e seus anúncios não aparecem para quem está buscando o que você vende.</div>
+        <div class="srv-block-items">
+          <div class="srv-block-item"><span style="color:var(--amethyst);flex-shrink:0">✓</span><span>Feed de produtos configurado e aprovado</span></div>
+          <div class="srv-block-item"><span style="color:var(--amethyst);flex-shrink:0">✓</span><span>Atributos corrigidos: cor, gênero, idade, dimensões</span></div>
+          <div class="srv-block-item"><span style="color:var(--amethyst);flex-shrink:0">✓</span><span>Prazo de devolução e políticas configurados</span></div>
+          <div class="srv-block-item"><span style="color:var(--amethyst);flex-shrink:0">✓</span><span>SEO preenchido em produtos e categorias</span></div>
+        </div>
+      </div>
+      <div class="srv-block">
+        <div class="srv-block-tag">Campanhas</div>
+        <div class="srv-block-name">Google Ads</div>
+        <div class="srv-block-desc">Campanhas estruturadas com objetivo claro, público definido e orçamento controlado. Não fazemos volume por volume: cada campanha tem um propósito específico dentro da estratégia da sua loja.</div>
+        <div class="srv-block-items">
+          <div class="srv-block-item"><span style="color:var(--amethyst);flex-shrink:0">✓</span><span>Campanhas Performance Max e Search estruturadas</span></div>
+          <div class="srv-block-item"><span style="color:var(--amethyst);flex-shrink:0">✓</span><span>Segmentação de público e temas de pesquisa</span></div>
+          <div class="srv-block-item"><span style="color:var(--amethyst);flex-shrink:0">✓</span><span>Assets criados: títulos, descrições e imagens</span></div>
+          <div class="srv-block-item"><span style="color:var(--amethyst);flex-shrink:0">✓</span><span>Otimização e relatório mensal</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="honest-box">
+      <div class="honest-title">Uma coisa importante sobre exclusividade</div>
+      <div class="honest-desc">Para gestão de Google Ads, trabalhamos com no máximo um cliente por segmento de mercado dentro de um raio de concorrência direta. Se você vende semijoias para revendedoras, não vamos gerenciar simultaneamente os anúncios de um concorrente direto que atende o mesmo público. Essa é uma questão de ética profissional que colocamos na mesa antes de qualquer contrato.</div>
+    </div>
+  </div>
+</section>
+
+<section id="case">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-label">Case real</div>
+      <h2 class="sec-title">Do zero a uma estrutura completa.</h2>
+      <p class="sec-sub">A Loreah Acessórios não tinha rastreamento, feed aprovado nem campanhas ativas. Estruturamos tudo do zero após a migração para a Tray.</p>
+    </div>
+    <div class="case-block">
+      <div class="case-header">
+        <div class="case-tag">Google Ads · Merchant Center · GTM · GA4</div>
+        <div class="case-name">Loreah Acessórios</div>
+        <div class="case-context">Marca de semijoias em aço inox focada em revendedoras B2B e atacadistas. Após a migração da NuvemShop para a Tray, a estrutura digital precisava ser construída do zero: sem rastreamento, sem feed aprovado, sem campanhas.</div>
+      </div>
+      <div class="case-body">
+        <div class="case-col">
+          <div class="case-col-title">Rastreamento</div>
+          <div class="case-stat"><div class="cs-n">4</div><div class="cs-l">Etapas do checkout mapeadas</div></div>
+          <div class="case-list">
+            <div class="case-list-item"><span style="color:var(--amethyst);flex-shrink:0">✓</span><span>GTM como única fonte de tags</span></div>
+            <div class="case-list-item"><span style="color:var(--amethyst);flex-shrink:0">✓</span><span>GA4 vinculado e funil configurado</span></div>
+            <div class="case-list-item"><span style="color:var(--amethyst);flex-shrink:0">✓</span><span>Tag de monitoramento do QR Code PIX</span></div>
+            <div class="case-list-item"><span style="color:var(--amethyst);flex-shrink:0">✓</span><span>Conversão de compra via auto-tagging</span></div>
+          </div>
+        </div>
+        <div class="case-col">
+          <div class="case-col-title">Merchant Center</div>
+          <div class="case-stat"><div class="cs-n">953</div><div class="cs-l">Produtos corrigidos e aprovados</div></div>
+          <div class="case-list">
+            <div class="case-list-item"><span style="color:var(--amethyst);flex-shrink:0">✓</span><span>Atributos preenchidos: cor, gênero, idade, dimensões</span></div>
+            <div class="case-list-item"><span style="color:var(--amethyst);flex-shrink:0">✓</span><span>Brand e identifier configurados via regras</span></div>
+            <div class="case-list-item"><span style="color:var(--amethyst);flex-shrink:0">✓</span><span>SEO preenchido em todos os produtos e categorias</span></div>
+            <div class="case-list-item"><span style="color:var(--amethyst);flex-shrink:0">✓</span><span>Política de devolução configurada</span></div>
+          </div>
+        </div>
+        <div class="case-col">
+          <div class="case-col-title">Google Ads</div>
+          <div class="case-stat"><div class="cs-n">35</div><div class="cs-l">Temas de pesquisa mapeados</div></div>
+          <div class="case-list">
+            <div class="case-list-item"><span style="color:var(--amethyst);flex-shrink:0">✓</span><span>Campanha PMax estruturada para revendedoras B2B</span></div>
+            <div class="case-list-item"><span style="color:var(--amethyst);flex-shrink:0">✓</span><span>20 imagens, 15 títulos, 5 descrições criados</span></div>
+            <div class="case-list-item"><span style="color:var(--amethyst);flex-shrink:0">✓</span><span>Público-alvo segmentado por perfil de revendedora</span></div>
+            <div class="case-list-item"><span style="color:var(--amethyst);flex-shrink:0">✓</span><span>Sitelinks, destaques e diretrizes de marca configurados</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-label">Como trabalhamos</div>
+      <h2 class="sec-title">Primeiro a estrutura. Depois os anúncios.</h2>
+      <p class="sec-sub">A maioria das agências começa pelos anúncios. A gente começa pelo rastreamento, porque sem dados corretos não tem campanha que funcione bem.</p>
+    </div>
+    <div class="process-grid">
+      <div class="proc-card">
+        <div class="proc-num">01</div>
+        <div class="proc-title">Diagnóstico</div>
+        <div class="proc-desc">Auditamos o que já existe: GTM, GA4, feed do Merchant Center, campanhas ativas. Mapeamos o que está errado, o que está faltando e o que precisa ser construído do zero.</div>
+      </div>
+      <div class="proc-card">
+        <div class="proc-num">02</div>
+        <div class="proc-title">Rastreamento</div>
+        <div class="proc-desc">Antes de qualquer anúncio, configuramos GTM e GA4 para capturar os eventos certos. Funil de checkout, conversões e comportamento do usuário precisam estar registrados corretamente.</div>
+      </div>
+      <div class="proc-card">
+        <div class="proc-num">03</div>
+        <div class="proc-title">Feed e catálogo</div>
+        <div class="proc-desc">Merchant Center configurado com feed aprovado, atributos corretos e produtos sem reprovação. Sem isso, a Performance Max não tem produto para anunciar.</div>
+      </div>
+      <div class="proc-card">
+        <div class="proc-num">04</div>
+        <div class="proc-title">Campanhas e gestão</div>
+        <div class="proc-desc">Com a estrutura pronta, ativamos e gerenciamos as campanhas. Relatório mensal com resultado real, ajustes baseados em dados e comunicação direta sobre o que está funcionando.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-label">Investimento</div>
+      <h2 class="sec-title">Setup único e gestão mensal</h2>
+      <p class="sec-sub">Dois momentos distintos: a estrutura que se constrói uma vez e a gestão contínua que otimiza com o tempo.</p>
+    </div>
+    <div class="pricing-grid">
+      <div class="price-card">
+        <div class="price-tag">Setup inicial</div>
+        <div class="price-name">Estrutura completa</div>
+        <div class="price-value">R$ 2.500</div>
+        <div class="price-sub">pago uma vez, na contratação</div>
+        <div class="price-rows">
+          <div class="price-row"><div class="pr-dot"></div>GTM configurado como única fonte de tags</div>
+          <div class="price-row"><div class="pr-dot"></div>GA4 com funil de checkout completo</div>
+          <div class="price-row"><div class="pr-dot"></div>Merchant Center com feed aprovado</div>
+          <div class="price-row"><div class="pr-dot"></div>Primeira campanha estruturada e ativada</div>
+          <div class="price-row"><div class="pr-dot"></div>Prazo de 10 dias úteis para o setup completo</div>
+        </div>
+        <a href="#contato" class="btn btn-p" style="align-self:flex-start">Solicitar diagnóstico →</a>
+      </div>
+      <div class="info-card">
+        <div>
+          <div class="price-tag">Gestão mensal</div>
+          <div class="price-name">Acompanhamento contínuo</div>
+          <div class="price-value" style="font-size:36px">R$ 1.500</div>
+          <div class="price-sub">por mês, a partir do segundo mês</div>
+        </div>
+        <div>
+          <div class="info-item-title">O que está incluído mensalmente</div>
+          <div class="info-item-desc">Monitoramento e otimização das campanhas ativas, ajustes de lance e segmentação com base nos dados do GA4, atualização do feed do Merchant Center quando necessário e relatório mensal com os principais indicadores.</div>
+        </div>
+        <div>
+          <div class="info-item-title">O orçamento de mídia é separado</div>
+          <div class="info-item-desc">O valor pago ao Google Ads não está incluído. Você define e controla diretamente o quanto investe em mídia. Nossa gestão é sobre o trabalho de configuração e otimização.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-label">Dúvidas frequentes</div>
+      <h2 class="sec-title">Perguntas sobre gestão digital</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q">Preciso ter a loja na Tray para contratar gestão digital?</div>
+        <div class="faq-a">Não. Trabalhamos com qualquer plataforma de e-commerce que permita instalação de GTM e integração com o Merchant Center. NuvemShop, Tray, WooCommerce e outras são compatíveis. O que avaliamos no diagnóstico é se a plataforma tem as permissões necessárias para a configuração completa.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Quanto tempo leva para ver resultado nas campanhas?</div>
+        <div class="faq-a">Depende do histórico da conta e do orçamento de mídia. Contas novas normalmente levam de 4 a 8 semanas para o algoritmo do Google aprender e otimizar. Por isso começamos pela estrutura: rastreamento e feed corretos aceleram esse aprendizado. Não prometemos resultados em prazo fixo, mas prometemos uma estrutura que permite que os resultados apareçam.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Qual o orçamento mínimo recomendado para Google Ads?</div>
+        <div class="faq-a">Para campanhas Performance Max em e-commerce de moda e acessórios, recomendamos no mínimo R$ 800 a R$ 1.200 por mês em mídia para ter volume suficiente de dados para otimização. Abaixo disso o aprendizado do algoritmo fica prejudicado e os resultados são imprevisíveis.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Vocês criam os criativos dos anúncios?</div>
+        <div class="faq-a">Criamos os assets de texto: títulos, descrições e extensões. Para imagens e vídeos dos anúncios, usamos imagens do catálogo da loja ou trabalhamos com o material que o cliente já tem. Se a loja precisar de criação de imagens específicas para anúncios, isso é tratado como escopo adicional.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="bg-dark" id="contato">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div>
+        <div class="sec-label" style="color:rgba(255,255,255,0.4)">Começar</div>
+        <h2 class="cta-h">Diagnóstico gratuito<br>da sua estrutura atual.</h2>
+        <p class="cta-sub">Antes de qualquer proposta, auditamos o que você já tem: GTM, GA4, Merchant Center e campanhas. Assim você sabe exatamente o que está faltando.</p>
+        <a href="https://wa.me/5519982655486?text=Olá!%20Tenho%20interesse%20em%20gestão%20digital%20para%20minha%20loja." class="btn btn-wa" target="_blank">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Falar no WhatsApp
+        </a>
+        <p style="font-size:12px;color:rgba(255,255,255,0.3);margin-top:16px">ou preencha o formulário ao lado</p>
+      </div>
+      <div class="cform-wrap">
+        <form class="cform" id="gd-form">
+          <div class="field">
+            <label>Seu nome</label>
+            <input type="text" id="g-nome" placeholder="Como posso te chamar?" required>
+          </div>
+          <div class="field">
+            <label>WhatsApp ou e-mail</label>
+            <input type="text" id="g-contato" placeholder="(19) 99999-9999" required>
+          </div>
+          <div class="field">
+            <label>Qual é a URL da sua loja?</label>
+            <input type="text" id="g-url" placeholder="minhaloja.com.br">
+          </div>
+          <div class="field">
+            <label>O que já existe na sua loja?</label>
+            <select id="g-status">
+              <option value="">Selecione uma opção</option>
+              <option value="Nada configurado ainda">Nada configurado ainda</option>
+              <option value="Tenho GA4 mas sem GTM">Tenho GA4 mas sem GTM</option>
+              <option value="Tenho campanhas rodando mas sem rastreamento">Tenho campanhas rodando mas sem rastreamento</option>
+              <option value="Tenho tudo mas quero melhorar">Tenho tudo mas quero otimizar</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Qual o principal objetivo agora? <span style="opacity:.5;font-weight:400">(opcional)</span></label>
+            <textarea id="g-objetivo" rows="3" placeholder="Ex: aumentar vendas para revendedoras, aparecer no Google Shopping..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-submit">Solicitar diagnóstico gratuito →</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-inner">
+      <div>
+        <a href="index.html" class="foot-logo">Lapidio<span style="color:var(--amethyst)">.</span></a>
+        <div class="foot-tag">Sua operação mais precisa. · Piracicaba, SP</div>
+      </div>
+      <ul class="foot-links">
+        <li><a href="index.html#servicos">Serviços</a></li>
+        <li><a href="index.html#cases">Cases</a></li>
+        <li><a href="index.html#faq">FAQ</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('gd-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  var nome     = document.getElementById('g-nome').value.trim();
+  var contato  = document.getElementById('g-contato').value.trim();
+  var url      = document.getElementById('g-url').value.trim();
+  var status   = document.getElementById('g-status').value;
+  var objetivo = document.getElementById('g-objetivo').value.trim();
+
+  if (!nome || !contato) return;
+
+  var texto = 'Olá! Me chamo *' + nome + '* e tenho interesse em *gestão digital*.';
+  if (url) texto += ' Minha loja é ' + url + '.';
+  if (status) texto += ' Situação atual: ' + status + '.';
+  if (objetivo) texto += ' Objetivo: ' + objetivo;
+  texto += ' Meu contato é ' + contato + '.';
+
+  window.open('https://wa.me/5519982655486?text=' + encodeURIComponent(texto), '_blank');
+});
+</script>
+</body>
+</html>
